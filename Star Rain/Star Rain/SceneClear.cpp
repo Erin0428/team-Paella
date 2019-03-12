@@ -44,7 +44,7 @@ void CSceneClear::InitScene()
 	////ボリュームを1.0に戻す
 	//float v = Audio::VolumeMaster(1.5);
 
-	////音楽スタート
+	////音楽スタートl
 	//Audio::Start(0);
 }
 //実行中メソッド
