@@ -7,6 +7,15 @@ enum OBJ_NAME
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
 	OBJ_HERO,
+	OBJ_TITLE,
+	OBJ_BACKGROUND,
+	OBJ_CLEAR,
+	OBJ_BLOCK,
+	OBJ_OVER,
+	OBJ_RANKING,
+	OBJ_MENU,
+	OBJ_TIME,
+	OBJ_GOAL_BLOCK,
 };
 //------------------------------------------------
 
@@ -40,7 +49,11 @@ struct UserData
 
 
 //ゲーム内で使用されるグローバル変数・定数・列挙--
-
+extern int g_map_chenge; //マップ変更
+extern int block2;
+extern bool check;
+extern bool m_c;
+extern bool g_f;
 
 
 //------------------------------------------------
@@ -51,14 +64,28 @@ struct UserData
 
 //ゲームシーンオブジェクトヘッダ------------------
 #include "ObjHero.h"
+#include"ObjBackground.h"
+#include"ObjClear.h"
+#include"ObjBlock.h"
+#include"ObjOver.h"
+//#include"ObjRanking.h"
+//#include"ObjMenu.h"
+#include"ObjTime.h"
+#include"Objgoalblock.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
+#include"SceneTitle.h"
+//#include"SceneRanking.h"
+#include"SceneClear.h"
+#include"SceneOver.h"
+//#include"SceneMenu.h"
 
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
 #define SET_GAME_START CSceneMain
+#define SET_GAME_START  CSceneTitle
 //-----------------------------------------------

@@ -22,7 +22,7 @@ void LSetWindow::NewWindow(int w,int h,wchar_t* name,HINSTANCE hInstance)
 	int height = m_height + GetSystemMetrics(SM_CYDLGFRAME) * 2 + GetSystemMetrics(SM_CYCAPTION);
 
 	//ウィンドウ作成
-	if( !( m_hWnd = CreateWindow( name, name, 
+	if( !( m_hWnd = CreateWindow( name, name,
 		WS_OVERLAPPEDWINDOW & ~( WS_MAXIMIZEBOX | WS_SIZEBOX ),
 		CW_USEDEFAULT, 0,  width, height, 0, 0, hInstance, 0) ) )
 	{

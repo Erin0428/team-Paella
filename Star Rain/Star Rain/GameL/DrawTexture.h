@@ -20,11 +20,16 @@ namespace GameL
 	//テクスチャイメージサイズ　８乗ｵﾝﾘ-設定
 	enum TEX_SIZE
 	{
-		TEX_SIZE_64   =	  64,
-		TEX_SIZE_128  =	 128,
-		TEX_SIZE_256  =	 256,
-		TEX_SIZE_512  =	 512,
-		TEX_SIZE_1024 =	1024,
+		TEX_SIZE_32 = 32,
+		TEX_SIZE_64 = 64,
+		TEX_SIZE_128 = 128,
+		TEX_SIZE_256 = 256,
+		TEX_SIZE_263 = 263,
+		TEX_SIZE_576 = 576,
+		TEX_SIZE_700 = 700,
+		TEX_SIZE_768 = 768,
+		TEX_SIZE_1600 = 1600,
+		TEX_SIZE_1920 = 1920,
 	};
 
 	//２Ｄ描画専用RECTのFLOAT型
