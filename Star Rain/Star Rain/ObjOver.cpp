@@ -92,6 +92,6 @@ void CObjOver::Draw()
 
 	float y[4] = { 1,1,1,1 };
 
-	Font::StrDraw(L"RETRY?", 10, 10, 10, y);
-	Font::StrDraw(L"TITLE?", 60, 50, 50, y);
+	Font::StrDraw(L"Retry?", 180, 400, 50, y);
+	Font::StrDraw(L"Title?", 450, 400, 50, y);
 }
