@@ -86,20 +86,12 @@ void CObjOver::Draw()
 	//0番目に登録したグラフィックをsrc・dst・ｃの情報を元に描写
 	Draw::Draw(4, &src, &dst, c, 0.0f);
 
-	float p[4] = { 1,1,1,1 };
+	float p[4] = { 1,0,0,1 };
 
-	Font::StrDraw(L"Game Over", GAME_OVER_X, GAME_OVER_Y, GAME_OVER_FONT_SIZE, p);
+	Font::StrDraw(L"GAME OVER", 165, 100, 100, p);
 
-	Font::StrDraw(L"コンテニューしますか？", GAME_CON_X, GAME_CON_Y, GAME_CON_FONT_SIZE, p);
+	float y[4] = { 1,1,1,1 };
 
-	if (choose == 0)
-		Font::StrDraw(L"◇はい", GAME_YES_X - 40, GAME_YES_Y, GAME_YES_FONT_SIZE, p);
-	else
-		Font::StrDraw(L"はい", GAME_YES_X, GAME_YES_Y, GAME_YES_FONT_SIZE, p);
-
-	if (choose == 1)
-		Font::StrDraw(L"◇いいえ", GAME_NO_X - 40, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
-	else
-		Font::StrDraw(L"いいえ", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
-
+	Font::StrDraw(L"RETRY?", 10, 10, 10, y);
+	Font::StrDraw(L"TITLE?", 60, 50, 50, y);
 }
