@@ -48,5 +48,5 @@ void CSceneOver::InitScene()
 	//float v = Audio::VolumeMaster(1.5);
 
 	//音楽スタート
-	Audio::Start(0);
+	//Audio::Start(0);
 }

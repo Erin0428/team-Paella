@@ -44,9 +44,9 @@ void CSceneMain::InitScene()
 	if (g_map_chenge == 0)
 		p = Save::ExternalDataOpen(L"map仮.csv", &size);//外部データ読み込み
 
-	int map[25][65];
+	int map[19][65];
 	int count = 1;
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 19; i++)
 	{
 		for (int j = 0; j < 65; j++)
 		{
