@@ -158,6 +158,8 @@ void CObjHero::Action()
 		b->SetScroll(b->GetScroll());
 	}
 
+
+
 	//–€ŽC
 	m_vx += -(m_vx*0.098);
 

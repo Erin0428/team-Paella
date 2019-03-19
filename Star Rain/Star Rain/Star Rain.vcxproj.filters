@@ -117,6 +117,9 @@
     <ClCompile Include="GameL\DrawTexture.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>ソース ファイル\ObjHero</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -199,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="GameL\DrawTexture.h">
       <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>ソース ファイル\ObjHero</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
