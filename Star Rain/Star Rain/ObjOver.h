@@ -6,15 +6,15 @@ using namespace GameL;
 
 //ï`âÊä÷åWÇÃíËêî
 
-#define GAME_OVER_X (165)
+#define GAME_OVER_X (190)
 #define GAME_OVER_Y (125)
 #define GAME_OVER_FONT_SIZE (100)
 
-#define GAME_CON_X (145)
-#define GAME_CON_Y (325)
-#define GAME_CON_FONT_SIZE (50)
+#define GAME_CON_X (270)
+#define GAME_CON_Y (300)
+#define GAME_CON_FONT_SIZE (60)
 
-#define GAME_YES_X (335)
+#define GAME_YES_X (370)
 #define GAME_YES_Y (400)
 #define GAME_YES_FONT_SIZE (50)
 
