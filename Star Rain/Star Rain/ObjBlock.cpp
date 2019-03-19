@@ -12,10 +12,10 @@
 using namespace GameL;
 
 
-CObjBlock::CObjBlock(int map[25][65])
+CObjBlock::CObjBlock(int map[19][65])
 {
 	//マップデータコピー
-	memcpy(m_map, map, sizeof(int)*(25 * 65));
+	memcpy(m_map, map, sizeof(int)*(19 * 65));
 }
 
 //イニシャライズ
@@ -56,9 +56,9 @@ void CObjBlock::Action()
 	}
 
 
-	for (int i = 0; i < 65; i++)
+	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 25; j++)
+		for (int j = 0; j < 65; j++)
 		{
 
 			if (m_map[i][j] == 4)
@@ -82,9 +82,9 @@ void CObjBlock::Draw()
 	RECT_F dst;//描写先表示位置
 
 
-	for (int i = 0; i < 65; i++)
+	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 25; j++)
+		for (int j = 0; j < 65; j++)
 		{
 
 			//切り取り位置の設定
@@ -137,9 +137,9 @@ void CObjBlock::BlockHit(
 	*bt = 0;
 
 	//m_mapの全要素にアクセス
-	for (int i = 0; i < 65; i++)
+	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 25; j++)
+		for (int j = 0; j < 65; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 4)
 			{

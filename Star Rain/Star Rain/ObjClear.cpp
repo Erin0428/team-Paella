@@ -4,6 +4,7 @@
 #include "GameL\SceneManager.h"
 #include "GameL\DrawTexture.h"
 #include"GameL\UserData.h"
+#include"SceneMain.h"
 
 #include "GameHead.h"
 #include "ObjClear.h"
@@ -55,6 +56,7 @@ void CObjClear::Action()
 		if (Input::GetVKey(VK_BACK) == true)
 		{
 			Scene::SetScene(new CSceneTitle());
+			g_map_chenge = 0;
 			m_key_flag = false;
 		}
 	}
@@ -69,7 +71,7 @@ void CObjClear::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 256.0f;
@@ -91,11 +93,11 @@ void CObjClear::Draw()
 	Font::StrDraw(L"Next Stage", NEXT_STAGE_X, NEXT_STAGE_Y, NEXT_STAGE_FONT_SIZE, p);
 
 	if (choose == 0)
-		Font::StrDraw(L"◇はい", NEXT_STAGE_YES_X - 40, NEXT_STAGE_YES_Y, GAME_NO_FONT_SIZE, p);
+		Font::StrDraw(L"◇Yes", NEXT_STAGE_YES_X - 40, NEXT_STAGE_YES_Y, GAME_NO_FONT_SIZE, p);
 	else
-		Font::StrDraw(L"はい", GAME_YES_X, GAME_YES_Y, GAME_NO_FONT_SIZE, p);
+		Font::StrDraw(L"Yes", GAME_YES_X, GAME_YES_Y, GAME_NO_FONT_SIZE, p);
 	if (choose == 1)
-		Font::StrDraw(L"◇いいえ", GAME_NO_X - 40, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
+		Font::StrDraw(L"◇No", GAME_NO_X - 40, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
 	else
-		Font::StrDraw(L"いいえ", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
+		Font::StrDraw(L"No", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, p);
 }

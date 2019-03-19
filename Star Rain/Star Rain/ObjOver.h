@@ -18,7 +18,7 @@ using namespace GameL;
 #define GAME_YES_Y (400)
 #define GAME_YES_FONT_SIZE (50)
 
-#define GAME_NO_X (315)
+#define GAME_NO_X (345)
 #define GAME_NO_Y (480)
 #define GAME_NO_FONT_SIZE (50)
 

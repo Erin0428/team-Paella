@@ -53,6 +53,9 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
+	hit_size = 0;
+	hit_size_x = 0;
+	hit_size_x2 = 0;
 
 	//落下によるゲームオーバー＆リスタート
 	if (g_py > 1000.0f)
@@ -64,7 +67,17 @@ void CObjHero::Action()
 	m_speed_power = 0.5f;
 
 	//ジャンプ
-	if (Input::GetVKey('W') == true)
+	if (Input::GetVKey(VK_SPACE) == true)
+	{
+		if (m_hit_down == true && m_time == 0)
+		{
+			m_vy = -9;
+			g_py += m_vy;
+
+		}
+	}
+	//ジャンプ
+	else if (Input::GetVKey('W') == true)
 	{
 		if (m_hit_down == true && m_time == 0)
 		{
@@ -77,28 +90,6 @@ void CObjHero::Action()
 		m_time--;
 		if (m_time <= 0) {
 			m_time = 0;
-		}
-	}
-
-	//しゃがむ
-	if (Input::GetVKey('S') == true)
-	{
-		m_ani_frame = 5;
-		m_ani_time = 0;
-		m_speed_power = 0.2f;
-		if (m_ani_frame != 5)//5のフレーム以外なら何もしない
-		{
-		}
-
-		else if (Input::GetVKey('D') == true) //しゃがむ（右移動）
-		{
-			m_vx += m_speed_power;
-			m_posture = 1.0f;
-		}
-		else if (Input::GetVKey('A') == true)//しゃがむ（左移動）
-		{
-			m_vx -= m_speed_power;
-			m_posture = 0.0f;
 		}
 	}
 
@@ -164,11 +155,13 @@ void CObjHero::Action()
 	m_vx += -(m_vx*0.098);
 
 	//自由落下運動
-	m_vy += 9.8 / (16.0f);
+	m_vy += 3.0 / (16.0f);
 
 	//位置の更新
 	g_px += m_vx;
 	g_py += m_vy;
+	m_pos_x += m_vx;
+	m_pos_y += m_vy;
 
 	//ブロックとの当たり判定実行
 	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -181,7 +174,7 @@ void CObjHero::Action()
 	CHitBox*hit = Hits::GetHitBox(this);
 
 	//HitBoxの位置を変更	
-	hit->SetPos(g_px + 18, g_py);
+	hit->SetPos(g_px + 18 - hit_size_x, g_py + hit_size, 64 - hit_size, 32 + hit_size_x2);
 
 	//罠に接触したらリスタート
 	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)

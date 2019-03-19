@@ -5,9 +5,9 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
-#include "GameL\Audio.h"
+//#include "GameL\Audio.h"
 #include "GameL\DrawTexture.h"
-#include "GameL\Audio.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -48,5 +48,5 @@ void CSceneOver::InitScene()
 	//float v = Audio::VolumeMaster(1.5);
 
 	//音楽スタート
-	Audio::Start(0);
+	//Audio::Start(0);
 }
