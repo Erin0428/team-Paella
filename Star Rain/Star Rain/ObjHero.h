@@ -20,6 +20,9 @@ public:
 #define HEROX (64)
 #define HEROY (64)
 
+	float GetPOSX() { return m_pos_x; }
+	float GetPOSY() { return m_pos_y; }
+
 	float GetX() { return g_px; }
 	float GetY() { return g_py; }
 	float GetVY() { return m_vy; }
