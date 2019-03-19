@@ -32,10 +32,11 @@ public:
 		float*vx, float*vy, int*bt
 	);
 
+	int m_map[19][65]; //マップ情報
 
 private:
 	void BlockDraw(float x, float y, RECT_F*dst, float c[]);
-	int m_map[19][65]; //マップ情報
+
 
 	float m_scroll;     //左右スクロール用
 	float m_scroll_map;

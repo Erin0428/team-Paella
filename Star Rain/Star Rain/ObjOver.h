@@ -22,6 +22,14 @@ using namespace GameL;
 #define GAME_NO_Y (480)
 #define GAME_NO_FONT_SIZE (50)
 
+#define GAME_RETRY_X (190)
+#define GAME_RETRY_Y (400)
+#define GAME_RETRY_FONT_SIZE (50)
+
+#define GAME_TITLE_X (460)
+#define GAME_TITLE_Y (400)
+#define GAME_TITLE_FONT_SIZE (50)
+
 #define RANKING_POS_X (600)
 #define RANKING_POS_Y (0)
 #define RANKING_FONT_SIZE (24)

@@ -23,11 +23,11 @@ void CObjOver::Init()
 //アクション
 void CObjOver::Action()
 {
-	if (Input::GetVKey(VK_UP) == true)
+	if (Input::GetVKey(VK_LEFT) == true)
 	{
 		choose = 0;
 	}
-	if (Input::GetVKey(VK_DOWN) == true)
+	if (Input::GetVKey(VK_RIGHT) == true)
 	{
 		choose = 1;
 	}
@@ -53,7 +53,7 @@ void CObjOver::Action()
 	}
 	if (choose == 1)
 	{
-		if (Input::GetVKey(VK_RETURN) == true)
+		if (Input::GetVKey(VK_BACK) == true)
 		{
 			g_map_chenge = 0;//マップ変更
 			Scene::SetScene(new CSceneTitle());
@@ -71,7 +71,7 @@ void CObjOver::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 700.0f;

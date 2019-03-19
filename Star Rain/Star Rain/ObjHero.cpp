@@ -93,7 +93,10 @@ void CObjHero::Action()
 		}
 	}
 
-	else if (m_ani_frame >= 4)
+	//自身のHitBoxを持ってくる
+	CHitBox*hit = Hits::GetHitBox(this);
+
+	if (m_ani_frame >= 4)
 	{
 		m_ani_frame = 0;
 		m_ani_time = 0;
@@ -157,11 +160,8 @@ void CObjHero::Action()
 	//自由落下運動
 	m_vy += 3.0 / (16.0f);
 
-	//位置の更新
-	g_px += m_vx;
-	g_py += m_vy;
-	m_pos_x += m_vx;
-	m_pos_y += m_vy;
+	//摩擦
+	m_vx += -(m_vx*0.098);
 
 	//ブロックとの当たり判定実行
 	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -170,21 +170,141 @@ void CObjHero::Action()
 		&m_block_type
 	);
 
-	//自身のHitBoxを持ってくる
-	CHitBox*hit = Hits::GetHitBox(this);
+	//敵と当ったているか確認
+	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr)
+	{
+		//主人公が敵とどの角度当ったているかを確認
+		HIT_DATA**hit_data;           //当たった時の細かな情報を入れるための構造体
+		hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_dataに主人公と当たっている他全てのHitBoxとの情報を入れる
 
-	//HitBoxの位置を変更	
+		for (int i = 0; i < hit->GetCount(); i++)
+		{
+			//敵の左右に当たったら
+			float r = 0;
+			for (int i = 0; i < 10; i++)
+			{
+				if (hit_data[i] != nullptr) {
+					r = hit_data[i]->r;
+				}
+			}
+
+			if ((r < 75 && r >= 0) || r > 300)
+			{
+				if (Input::GetVKey('D') == true || Input::GetVKey(VK_RIGHT) == true)
+				{
+					m_vx = 0.0f;
+				}
+			}
+			if (r > 120 && r < 235)
+			{
+				if (Input::GetVKey('A') == true || Input::GetVKey(VK_LEFT) == true)
+				{
+					m_vx = 0.0f;
+				}
+
+			}
+			if (r > 60 && r < 120)
+			{
+				if (Input::GetVKey('S') == true)
+				{
+					if (r > 0 && r < 180)
+						Scene::SetScene(new CSceneOver());
+				}
+				else
+					Scene::SetScene(new CSceneOver());
+			}
+		}
+	}
+
+	//敵と当ったているか確認
+	if (hit->CheckObjNameHit(OBJ_METEOFALL) != nullptr)
+	{
+		//主人公が敵とどの角度当ったているかを確認
+		HIT_DATA**hit_data;           //当たった時の細かな情報を入れるための構造体
+		hit_data = hit->SearchObjNameHit(OBJ_METEOFALL);//hit_dataに主人公と当たっている他全てのHitBoxとの情報を入れる
+
+		for (int i = 0; i < hit->GetCount(); i++)
+		{
+			//敵の左右に当たったら
+			float r = 0;
+			for (int i = 0; i < 10; i++)
+			{
+				if (hit_data[i] != nullptr) {
+					r = hit_data[i]->r;
+				}
+			}
+
+			if ((r < 75 && r >= 0) || r > 300)
+			{
+				if (Input::GetVKey('D') == true || Input::GetVKey(VK_RIGHT) == true)
+				{
+					m_vx = 0.0f;
+				}
+			}
+			if (r > 120 && r < 235)
+			{
+				if (Input::GetVKey('A') == true || Input::GetVKey(VK_LEFT) == true)
+				{
+					m_vx = 0.0f;
+				}
+
+			}
+			if (r > 60 && r < 120)
+			{
+				if (Input::GetVKey('S') == true)
+				{
+					if (r > 0 && r < 180)
+						Scene::SetScene(new CSceneOver());
+				}
+				else
+					Scene::SetScene(new CSceneOver());
+			}
+		}
+	}
+
+	//敵と当ったているか確認
+	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr)
+	{
+		//主人公が敵とどの角度当ったているかを確認
+		HIT_DATA**hit_data;           //当たった時の細かな情報を入れるための構造体
+		hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_dataに主人公と当たっている他全てのHitBoxとの情報を入れる
+
+		for (int i = 0; i < hit->GetCount(); i++)
+		{
+			//敵の左右に当たったら
+			float r = 0;
+			for (int i = 0; i < 10; i++)
+			{
+				if (hit_data[i] != nullptr) {
+					r = hit_data[i]->r;
+				}
+			}
+
+			if ((r < 75 && r >= 0) || r >= 290)
+			{
+				if (m_c == true)
+				{
+					Scene::SetScene(new CSceneOver());
+				}
+			}
+		}
+	}
+
+	//位置の更新
+	g_px += m_vx;
+	g_py += m_vy;
+	m_pos_x += m_vx;
+	m_pos_y += m_vy;
+
+	//HitBoxの位置を更新
 	hit->SetPos(g_px + 18 - hit_size_x, g_py + hit_size, 64 - hit_size, 32 + hit_size_x2);
 
-	//罠に接触したらリスタート
 	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
 	{
-		//場外に出たらリスタート
-		Scene::SetScene(new CSceneOver());
+		Scene::SetScene(new CSceneOver());//場外に出たらリスタート
 		g_px = 64.0f;
 		g_py = 500.0f;
 	}
-
 }
 
 //ドロー
