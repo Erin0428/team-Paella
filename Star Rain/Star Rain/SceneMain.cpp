@@ -74,7 +74,7 @@ void CSceneMain::InitScene()
 	Font::SetStrTex(L"0123456789分秒");
 
 	//外部グラフィックファイルを読み込み0番に登録(576×384ピクセル)
-	Draw::LoadImage(L"image.png", 0, TEX_SIZE_576);
+	Draw::LoadImage(L"無題.png", 0, TEX_SIZE_576);
 
 	Draw::LoadImage(L"隕石(仮).png", 12, TEX_SIZE_768);
 
@@ -89,6 +89,10 @@ void CSceneMain::InitScene()
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
+
+	//隕石オブジェクト作成
+	// CObjMeteo*meteo = new CObjMeteo();
+
 
 	//タイムオブジェクト作成
 	//C0bjTime* objt = new C0bjTime();
