@@ -104,6 +104,13 @@ void ObjMeteo::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + block->GetScroll(), m_py);
 
+	//バレットに当たっているか
+	if (hit->CheckObjNameHit(ELEMENT_BULLET) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
 }
 
 //ドロー
