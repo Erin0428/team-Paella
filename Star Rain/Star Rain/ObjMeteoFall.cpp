@@ -99,9 +99,16 @@ void ObjMeteoFall::Action()
 		&m_block_type
 	);
 
-	//位置の更新
+	//位置の更新S
 	m_px += m_vx;
 	m_py += m_vy;
+	
+	//バレットに当たっているか
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 }
 //ドロー
 void ObjMeteoFall::Draw()
@@ -125,6 +132,6 @@ void ObjMeteoFall::Draw()
 	dst.m_right = ALL_BLOCK_SIZE + m_px + block->GetScroll();
 	dst.m_bottom = ALL_BLOCK_SIZE + m_py;
 
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+	Draw::Draw(7, &src, &dst, c, 0.0f);
 
 }

@@ -52,7 +52,7 @@ void ObjMeteo::Action()
 	}
 
 	//通常速度
-	m_speed_power = 0.5f;
+	m_speed_power = 0.0f;
 
 
 	//ブロック衝突で向き変更
@@ -103,6 +103,13 @@ void ObjMeteo::Action()
 	//HitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + block->GetScroll(), m_py);
+
+	//バレットに当たっているか
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 }
 
