@@ -81,8 +81,6 @@ void CSceneMain::InitScene()
 
 	Draw::LoadImage(L"meteo1.png", 12, TEX_SIZE_768);
 
-	Draw::LoadImage(L"隕石(仮).png", 12, TEX_SIZE_768);
-
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
 	Objs::InsertObj(obj, OBJ_HERO, 10);

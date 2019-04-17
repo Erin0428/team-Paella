@@ -3,7 +3,6 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
-#include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
 #include"ObjBlock.h"
