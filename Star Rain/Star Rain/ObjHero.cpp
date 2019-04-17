@@ -51,7 +51,7 @@ void CObjHero::Init()
 	hit_size_x2 = 0;
 
 	//当たり判定用のHitBoxを作成				
-	Hits::SetHitBox(this, g_px, g_py, 32, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, g_px, g_py, 64, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //アクション
@@ -139,7 +139,7 @@ void CObjHero::Action()
 
 	else
 	{
-		m_ani_frame = 0;   //キー入力が無い場合静止フレームにする
+		m_ani_frame = 1;   //キー入力が無い場合静止フレームにする
 		m_ani_time = 0;
 	}
 	if (m_ani_time > m_ani_max_time)
@@ -332,6 +332,11 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
+	int AniData[4] =
+	{
+		1,0,2,0
+	};
+
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -340,16 +345,15 @@ void CObjHero::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 64.0f;
-	src.m_bottom = 64.0f;
+	src.m_left = 0.0f + AniData[m_ani_frame] * 100;
+	src.m_right = 100.0f + AniData[m_ani_frame] * 100;
+	src.m_bottom = 100.0f ;
 
 	//表示位置の設定
 	dst.m_top = 0.0f + g_py;
-	dst.m_left = (64.0f*m_posture) + g_px;
-	dst.m_right = (64 - 64.0f*m_posture) + g_px;
+	dst.m_left = 0.0f + g_px;
+	dst.m_right = 64.0f + g_px;
 	dst.m_bottom = 64.0f + g_py;
-
 
 	//描画
 	Draw::Draw(0, &src, &dst, c, 0.0f);

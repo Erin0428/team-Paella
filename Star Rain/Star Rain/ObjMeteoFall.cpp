@@ -54,7 +54,7 @@ void ObjMeteoFall::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + block->GetScroll(), m_py);
 
-	if (hx > m_px - 340)
+	if (hx > m_px - 440)
 	{
 		Fall_f = true;
 	}
