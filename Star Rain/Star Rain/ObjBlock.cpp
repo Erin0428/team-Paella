@@ -3,6 +3,7 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneManager.h"
 #include"GameL\SceneObjManager.h"
+#include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
 #include"ObjBlock.h"
@@ -29,6 +30,7 @@ void CObjBlock::Init()
 	m_ani_frame = 0;
 
 	m_ani_max_time = 15;
+
 }
 
 
