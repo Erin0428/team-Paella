@@ -23,7 +23,7 @@ void ObjMeteo::Init()
 	m_vy = 0.0f;
 	m_posture = 1.0f;	//右向き0.0f 左向き1.0f
 
-	m_speed_power = 0.5f;	//通常速度
+	m_speed_power = 10.0f;	//通常速度
 
 	m_move = true;			//true=右 false=左
 
@@ -46,38 +46,38 @@ void ObjMeteo::Action()
 	float hy = hero->GetY();
 
 	//落下
-	if (m_py > 1000.0f)
-	{
-		;
-	}
+	//if (m_py > 1000.0f)
+	//{
+	//	;
+	//}
 
-	//通常速度
-	m_speed_power = 0.5f;
+	////通常速度
+	//m_speed_power = 10.0f;
 
 
 	//ブロック衝突で向き変更
-	if (m_hit_down == true)
-	{
-		m_move = true;
-	}
-	if (m_hit_up == true)
-	{
-		m_move = false;
-	}
+	//if (m_hit_down == true)
+	//{
+	//	m_move = true;
+	//}
+	//if (m_hit_up == true)
+	//{
+	//	m_move = false;
+	//}
 
-	//方向
-	if (m_move == false)
-	{
-		m_vy += m_speed_power;
-	}
-	else if (m_move == true)
-	{
-		m_vy -= m_speed_power;
-	}
+	////方向
+	//if (m_move == false)
+	//{
+	//	m_vy += m_speed_power;
+	//}
+	//else if (m_move == true)
+	//{
+	//	m_vy -= m_speed_power;
+	//}
 
-	//摩擦
-	m_vx += -(m_vx * 0.098);
-	m_vy += -(m_vy * 0.098);
+	////摩擦
+	//m_vx += -(m_vx * 0.098);
+	//m_vy += -(m_vy * 0.098);
 
 
 	//ブロックタイプ検知用の変数がないためのダミー
@@ -89,20 +89,20 @@ void ObjMeteo::Action()
 	m_scrolly = block->GetScrollY();
 	memcpy(m_map, block->m_map, sizeof(int) * 19 * 65);
 
-	//ブロックとの当たり判定実行
-	ObjMeteo* pd = (ObjMeteo*)Objs::GetObj(OBJ_METEO);
-	pd->MeteoHit(&m_px, &m_py, false,
-		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
-		&m_block_type
-	);
-
 	//位置の更新
-	m_px += m_vx;
-	m_py += m_vy;
+	/*m_px += m_vx;
+	m_py += m_vy;*/
 
 	//HitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + block->GetScroll(), m_py);
+
+	//バレットに当たっているか
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 
 }
 

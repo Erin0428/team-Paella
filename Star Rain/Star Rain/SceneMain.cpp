@@ -10,6 +10,7 @@
 #include"GameL\DrawFont.h"
 #include"GameL\Audio.h"
 
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -74,7 +75,11 @@ void CSceneMain::InitScene()
 	Font::SetStrTex(L"0123456789分秒");
 
 	//外部グラフィックファイルを読み込み0番に登録(576×384ピクセル)
-	Draw::LoadImage(L"image.png", 0, TEX_SIZE_576);
+	Draw::LoadImage(L"無題.png", 0, TEX_SIZE_576);
+	Draw::LoadImage(L"Bullet.png", 7, TEX_SIZE_768);
+	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
+
+	Draw::LoadImage(L"meteo1.png", 12, TEX_SIZE_768);
 
 	Draw::LoadImage(L"隕石(仮).png", 12, TEX_SIZE_768);
 
@@ -90,9 +95,15 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
+	//隕石オブジェクト作成
+	// CObjMeteo*meteo = new CObjMeteo();
+
+
 	//タイムオブジェクト作成
 	//C0bjTime* objt = new C0bjTime();
 	//Objs::InsertObj(objt, OBJ_TIME, 12);
+
+
 }
 
 //実行中メゾット

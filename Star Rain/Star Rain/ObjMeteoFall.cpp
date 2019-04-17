@@ -19,7 +19,8 @@ ObjMeteoFall::ObjMeteoFall(float x, float y)
 //イニシャライズ
 void ObjMeteoFall::Init()
 {
-	m_speed_power = 1.3f;	//通常速度
+	m_speed_power_y = 1.3f;	//通常速度
+	m_speed_power_x = 1.3f;	//通常速度
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
@@ -54,7 +55,7 @@ void ObjMeteoFall::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + block->GetScroll(), m_py);
 
-	if (hx > m_px - 340)
+	if (hx > m_px - 440)
 	{
 		Fall_f = true;
 	}
@@ -66,7 +67,8 @@ void ObjMeteoFall::Action()
 			;
 		}
 
-		m_speed_power = +0.6f;  //通常速度
+		m_speed_power_y = +0.2f;  //隕石落下速度y
+		m_speed_power_x = -0.1f;	 //通常速度
 
 		//ブロック衝突で向き変更
 		if (m_hit_up == true)
@@ -82,8 +84,8 @@ void ObjMeteoFall::Action()
 		//方向
 		if (m_move == false)
 		{
-			m_vy += m_speed_power;
-			m_vx += -0.3f;
+			m_vy += m_speed_power_y;
+			m_vx += m_speed_power_x;
 		}
 	}
 	
@@ -99,9 +101,28 @@ void ObjMeteoFall::Action()
 		&m_block_type
 	);
 
+	if (m_speed_power_y >= 1.0f)
+	{
+		m_speed_power_y += -0.1f;
+		m_speed_power_y += 0.1f;
+	}
+
+	if (m_speed_power_y <= 1.0f)
+	{
+		m_speed_power_y += 1.0f;
+		m_speed_power_y += -0.1f;
+	}
+
 	//位置の更新
 	m_px += m_vx;
 	m_py += m_vy;
+	
+	//バレットに当たっているか
+	if (hit->CheckObjNameHit(ELEMENT_BULLET) != nullptr)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
 }
 //ドロー
 void ObjMeteoFall::Draw()
@@ -125,6 +146,6 @@ void ObjMeteoFall::Draw()
 	dst.m_right = ALL_BLOCK_SIZE + m_px + block->GetScroll();
 	dst.m_bottom = ALL_BLOCK_SIZE + m_py;
 
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+	Draw::Draw(7, &src, &dst, c, 0.0f);
 
 }
