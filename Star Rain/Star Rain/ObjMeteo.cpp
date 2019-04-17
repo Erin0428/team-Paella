@@ -98,7 +98,7 @@ void ObjMeteo::Action()
 	hit->SetPos(m_px + block->GetScroll(), m_py);
 
 	//ƒoƒŒƒbƒg‚É“–‚½‚Á‚Ä‚¢‚é‚©
-	if (hit->CheckObjNameHit(ELEMENT_BULLET) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_BULLET) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
