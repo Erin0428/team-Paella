@@ -50,7 +50,7 @@ void CObjHero::Init()
 	hit_size_x2 = 0;
 
 	//“–‚½‚è”»’è—p‚ÌHitBox‚ðì¬				
-	Hits::SetHitBox(this, g_px, g_py, 32, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, g_px, g_py, 64, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -172,8 +172,6 @@ void CObjHero::Action()
 		g_px = 350;
 		b->SetScroll(b->GetScroll());
 	}
-
-
 
 	//–€ŽC
 	//m_vx += -(m_vx*0.098);
@@ -378,7 +376,6 @@ void CObjHero::Draw()
 	dst.m_left = 0.0f + g_px;
 	dst.m_right = 64.0f + g_px;
 	dst.m_bottom = 64.0f + g_py;
-
 
 	//•`‰æ
 	Draw::Draw(0, &src, &dst, c, 0.0f);
