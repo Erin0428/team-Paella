@@ -45,6 +45,7 @@ private:
 	float m_vy;
 	float m_posture; //姿勢
 
+
 	bool m_del; //削除チェック
 	bool m_ani; //削除チェック
 
@@ -67,6 +68,9 @@ private:
 
 	bool m_key_f;
 
+	//弾丸制御
+	bool m_f;
+
 	//踏んでいるblockの種類を確認用
 	int m_block_type;
 	int s;
@@ -78,5 +82,6 @@ private:
 	int hit_size;
 	int hit_size_x;
 	int hit_size_x2;
+
 
 };

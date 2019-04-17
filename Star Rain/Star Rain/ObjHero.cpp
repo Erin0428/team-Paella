@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
 #include "GameL\HitBoxManager.h"
+#include "CObjBullet.h"
 
 #include "GameHead.h"
 #include "ObjHero.h"
@@ -29,6 +30,8 @@ void CObjHero::Init()
 	m_hit_down = false;
 	m_hit_left = false;
 	m_hit_right = false;
+
+	m_f = true;
 
 	m_del = false;
 
@@ -65,6 +68,24 @@ void CObjHero::Action()
 	}
 
 	m_speed_power = 0.5f;
+
+
+	//主人公機の弾丸発射
+	if (Input::GetVKey('Z') == true)
+	{
+		if (m_f == true)
+		{
+			//弾丸オブジェクト作成
+			CObjBullet* obj_b = new CObjBullet(g_px + 30.0f, g_py + 15.0f);
+			Objs::InsertObj(obj_b, OBJ_BULLET, 14);
+
+			m_f = false;
+		}
+	}
+	else
+	{
+		m_f = true;
+	}
 
 	//ジャンプ
 	if (Input::GetVKey(VK_SPACE) == true)
@@ -111,13 +132,13 @@ void CObjHero::Action()
 	else if (Input::GetVKey('A') == true)
 	{
 		m_vx -= m_speed_power;
-		m_posture = 0.0f;
+		m_posture = 2.0f;
 		m_ani_time += 1;
 	}
 
 	else
 	{
-		m_ani_frame = 0;   //キー入力が無い場合静止フレームにする
+		m_ani_frame = 1;   //キー入力が無い場合静止フレームにする
 		m_ani_time = 0;
 	}
 	if (m_ani_time > m_ani_max_time)
@@ -155,7 +176,7 @@ void CObjHero::Action()
 
 
 	//摩擦
-	m_vx += -(m_vx*0.098);
+	//m_vx += -(m_vx*0.098);
 
 	//自由落下運動
 	m_vy += 3.0 / (16.0f);
@@ -192,6 +213,7 @@ void CObjHero::Action()
 			{
 				if (Input::GetVKey('D') == true || Input::GetVKey(VK_RIGHT) == true)
 				{
+					m_posture = 1;
 					m_vx = 0.0f;
 				}
 			}
@@ -199,6 +221,7 @@ void CObjHero::Action()
 			{
 				if (Input::GetVKey('A') == true || Input::GetVKey(VK_LEFT) == true)
 				{
+					m_posture = 2;
 					m_vx = 0.0f;
 				}
 
@@ -238,14 +261,24 @@ void CObjHero::Action()
 			{
 				if (Input::GetVKey('D') == true || Input::GetVKey(VK_RIGHT) == true)
 				{
+					m_posture = 1;
 					m_vx = 0.0f;
+				}
+				else
+				{
+
 				}
 			}
 			if (r > 120 && r < 235)
 			{
 				if (Input::GetVKey('A') == true || Input::GetVKey(VK_LEFT) == true)
 				{
+					m_posture = 2;
 					m_vx = 0.0f;
+				}
+				else
+				{
+
 				}
 
 			}
@@ -265,29 +298,30 @@ void CObjHero::Action()
 	//敵と当ったているか確認
 	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr)
 	{
-		//主人公が敵とどの角度当ったているかを確認
-		HIT_DATA**hit_data;           //当たった時の細かな情報を入れるための構造体
-		hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_dataに主人公と当たっている他全てのHitBoxとの情報を入れる
+		Scene::SetScene(new CSceneOver());
+		////主人公が敵とどの角度当ったているかを確認
+		//HIT_DATA**hit_data;           //当たった時の細かな情報を入れるための構造体
+		//hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_dataに主人公と当たっている他全てのHitBoxとの情報を入れる
 
-		for (int i = 0; i < hit->GetCount(); i++)
-		{
-			//敵の左右に当たったら
-			float r = 0;
-			for (int i = 0; i < 10; i++)
-			{
-				if (hit_data[i] != nullptr) {
-					r = hit_data[i]->r;
-				}
-			}
+		//for (int i = 0; i < hit->GetCount(); i++)
+		//{
+		//	//敵の左右に当たったら
+		//	float r = 0;
+		//	for (int i = 0; i < 10; i++)
+		//	{
+		//		if (hit_data[i] != nullptr) {
+		//			r = hit_data[i]->r;
+		//		}
+		//	}
 
-			if ((r < 75 && r >= 0) || r >= 290)
-			{
-				if (m_c == true)
-				{
-					Scene::SetScene(new CSceneOver());
-				}
-			}
-		}
+		//	if ((r < 75 && r >= 0) || r >= 290)
+		//	{
+		//		if (m_c == true)
+		//		{
+		//			Scene::SetScene(new CSceneOver());
+		//		}
+		//	}
+		//}
 	}
 
 	//位置の更新
@@ -310,22 +344,39 @@ void CObjHero::Action()
 //ドロー
 void CObjHero::Draw()
 {
+	int AniData[4] =
+	{
+		1,0,2,0
+	};
+
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	//切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 64.0f;
-	src.m_bottom = 64.0f;
-
+	if (m_posture == 1)
+	{
+		//Dが入力された時の
+		//切り取り位置の設定
+		src.m_top = 0.0f;
+		src.m_left = 0.0f + AniData[m_ani_frame] * 100;
+		src.m_right = 100.0f + AniData[m_ani_frame] * 100;
+		src.m_bottom = 100.0f;
+	}
+	else if (m_posture == 2)
+	{
+		//Aが入力された時の
+		//切り取り位置の設定
+		src.m_top = 101.0f;
+		src.m_left = 0.0f + AniData[m_ani_frame] * 100;
+		src.m_right = 100.0f + AniData[m_ani_frame] * 100;
+		src.m_bottom = 200.0f;
+	}
 	//表示位置の設定
 	dst.m_top = 0.0f + g_py;
-	dst.m_left = (64.0f*m_posture) + g_px;
-	dst.m_right = (64 - 64.0f*m_posture) + g_px;
+	dst.m_left = 0.0f + g_px;
+	dst.m_right = 64.0f + g_px;
 	dst.m_bottom = 64.0f + g_py;
 
 

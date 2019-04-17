@@ -39,7 +39,8 @@ private:
 	float m_vy;
 	float m_scrollx;     //左右スクロール用
 	float m_scrolly;
-	float m_speed_power;	//スピードパワー
+	float m_speed_power_y;	//スピードパワー
+	float m_speed_power_x;
 	bool Fall_f;
 
 	bool abc;
