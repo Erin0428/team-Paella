@@ -23,11 +23,11 @@ void CObjOver::Init()
 //アクション
 void CObjOver::Action()
 {
-	if (Input::GetVKey(VK_UP) == true)
+	if (Input::GetVKey(VK_LEFT) == true)
 	{
 		choose = 0;
 	}
-	if (Input::GetVKey(VK_DOWN) == true)
+	if (Input::GetVKey(VK_RIGHT) == true)
 	{
 		choose = 1;
 	}
@@ -53,7 +53,7 @@ void CObjOver::Action()
 	}
 	if (choose == 1)
 	{
-		if (Input::GetVKey(VK_RETURN) == true)
+		if (Input::GetVKey(VK_BACK) == true)
 		{
 			g_map_chenge = 0;//マップ変更
 			Scene::SetScene(new CSceneTitle());
@@ -71,7 +71,7 @@ void CObjOver::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 700.0f;
@@ -92,6 +92,14 @@ void CObjOver::Draw()
 
 	float y[4] = { 1,1,1,1 };
 
-	Font::StrDraw(L"Retry?", 180, 400, 50, y);
-	Font::StrDraw(L"Title?", 450, 400, 50, y);
+	if(choose==0)
+	Font::StrDraw(L"◇Retry?", GAME_RETRY_X - 40, GAME_RETRY_Y, GAME_RETRY_FONT_SIZE, y);
+	else
+	Font::StrDraw(L"Retry?", GAME_RETRY_X, GAME_RETRY_Y, GAME_RETRY_FONT_SIZE, y);
+	if(choose==1)
+	Font::StrDraw(L"◇Title?", GAME_TITLE_X - 40, GAME_TITLE_Y, GAME_TITLE_FONT_SIZE, y);
+	else
+	Font::StrDraw(L"Title?", GAME_TITLE_X, GAME_TITLE_Y, GAME_TITLE_FONT_SIZE, y);
+
+	
 }

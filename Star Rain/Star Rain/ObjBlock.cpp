@@ -39,6 +39,7 @@ void CObjBlock::Action()
 	CObjHero*hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
+	ObjMeteoFall*fall = (ObjMeteoFall*)Objs::GetObj(OBJ_METEOFALL);
 	////後方スクロールライン
 	if (hx < 80)
 	{
@@ -60,13 +61,25 @@ void CObjBlock::Action()
 	{
 		for (int j = 0; j < 65; j++)
 		{
-
-			if (m_map[i][j] == 4)
+			if (m_map[i][j] == 2)
+			{
+				ObjMeteo* mto = new ObjMeteo(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mto, OBJ_METEO, 12);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 3)
+			{
+				ObjMeteoFall* mto = new ObjMeteoFall(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mto, OBJ_METEOFALL, 13);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 4)
 			{
 				CObjgoalblock* ends = new CObjgoalblock(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
 				Objs::InsertObj(ends, OBJ_GOAL_BLOCK, 11);
 				m_map[i][j] = 0;
 			}
+
 		}
 	}
 }
@@ -103,6 +116,17 @@ void CObjBlock::Draw()
 				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(2, &src, &dst, c, 0.0f);
+			}
+			//設置メテオ表示
+			else if (m_map[i][j] == 2)
+			{
+				//表示位置の設定
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
+
+				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
 		}
 	}

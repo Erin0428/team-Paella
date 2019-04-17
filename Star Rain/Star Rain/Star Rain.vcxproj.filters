@@ -117,6 +117,12 @@
     <ClCompile Include="GameL\DrawTexture.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjMeteoFall.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteo.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -199,6 +205,12 @@
     </ClInclude>
     <ClInclude Include="GameL\DrawTexture.h">
       <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFall.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteo.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
