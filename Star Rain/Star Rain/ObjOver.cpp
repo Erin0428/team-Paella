@@ -18,6 +18,7 @@ extern float g_py;
 void CObjOver::Init()
 {
 	choose = 0;
+	m_key_flag = false;
 }
 
 //アクション
@@ -56,10 +57,22 @@ void CObjOver::Action()
 		if (Input::GetVKey(VK_RETURN) == true)
 		{
 			g_map_chenge = 0;//マップ変更
-			Scene::SetScene(new CSceneTitle());
-			m_key_flag = false;
+			if (m_key_flag == true)
+			{
+
+				Scene::SetScene(new CSceneTitle());
+
+
+				m_key_flag = false;
+			}
 		}
+		else
+		{
+			m_key_flag = true;
+		}
+		
 	}
+
 }
 //ドロー
 void CObjOver::Draw()

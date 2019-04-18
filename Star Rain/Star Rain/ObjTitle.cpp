@@ -22,7 +22,7 @@ bool m_c = true;
 //イニシャライズ
 void CObjTitle::Init()
 {
-	m_key_flag = true;
+	m_key_flag = false;
 	choose = 0;
 	m_time = 10;
 }
