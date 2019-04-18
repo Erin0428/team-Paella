@@ -92,16 +92,16 @@ void CObjOver::Draw()
 
 	float y[4] = { 1,1,1,1 };
 
-	Font::StrDraw(L"GAME OVER", GAME_OVER_X, GAME_OVER_Y, GAME_OVER_FONT_SIZE, p);
+	Font::StrDraw(L"GAME OVER",165,100, 100,p);
 
-	Font::StrDraw(L"CONTINUE?", GAME_CON_X, GAME_CON_Y, GAME_CON_FONT_SIZE, y);
+	
 
 	if (choose == 0)
-		Font::StrDraw(L"ÅûYes", NEXT_STAGE_YES_X - 40, NEXT_STAGE_YES_Y, GAME_NO_FONT_SIZE, y);
+		Font::StrDraw(L"ÅûRetry", GAME_RETRY_X - 40, GAME_RETRY_Y, GAME_NO_FONT_SIZE, y);
 	else
-		Font::StrDraw(L"Yes", GAME_YES_X, GAME_YES_Y, GAME_NO_FONT_SIZE, y);
+		Font::StrDraw(L"Retry", GAME_RETRY_X, GAME_RETRY_Y, GAME_NO_FONT_SIZE, y);
 	if (choose == 1)
-		Font::StrDraw(L"ÅûNo", GAME_NO_X - 40, GAME_NO_Y, GAME_NO_FONT_SIZE, y);
+		Font::StrDraw(L"ÅûTitle", GAME_TITLE_X - 40, GAME_TITLE_Y, GAME_NO_FONT_SIZE, y);
 	else
-		Font::StrDraw(L"No", GAME_NO_X, GAME_NO_Y, GAME_NO_FONT_SIZE, y);
+		Font::StrDraw(L"Title", GAME_TITLE_X, GAME_TITLE_Y, GAME_NO_FONT_SIZE, y);
 }
