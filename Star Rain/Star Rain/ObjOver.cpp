@@ -92,10 +92,6 @@ void CObjOver::Draw()
 
 	float y[4] = { 1,1,1,1 };
 
-	Font::StrDraw(L"GAME OVER", GAME_OVER_X, GAME_OVER_Y, GAME_OVER_FONT_SIZE, p);
-
-	Font::StrDraw(L"CONTINUE?", GAME_CON_X, GAME_CON_Y, GAME_CON_FONT_SIZE, y);
-
 	if (choose == 0)
 		Font::StrDraw(L"ÅûRetry?", GAME_RETRY_X - 40, GAME_RETRY_Y, GAME_RETRY_FONT_SIZE, y);
 	else
