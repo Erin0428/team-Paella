@@ -43,13 +43,13 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 
 	if (g_map_chenge == 0)
-		p = Save::ExternalDataOpen(L"map仮.csv", &size);//外部データ読み込み
+		p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
 
-	int map[19][65];
+	int map[19][120];
 	int count = 1;
 	for (int i = 0; i < 19; i++)
 	{
-		for (int j = 0; j < 65; j++)
+		for (int j = 0; j < 120; j++)
 		{
 			int w = 0;
 			swscanf_s(&p.get()[count], L"%d", &w);
