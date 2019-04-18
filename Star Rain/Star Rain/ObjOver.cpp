@@ -53,7 +53,7 @@ void CObjOver::Action()
 	}
 	if (choose == 1)
 	{
-		if (Input::GetVKey(VK_BACK) == true)
+		if (Input::GetVKey(VK_RETURN) == true)
 		{
 			g_map_chenge = 0;//マップ変更
 			Scene::SetScene(new CSceneTitle());
