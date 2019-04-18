@@ -29,6 +29,7 @@ void CObjBlock::Init()
 	m_ani_frame = 0;
 
 	m_ani_max_time = 15;
+
 }
 
 
