@@ -82,6 +82,16 @@ void ObjMeteoFall::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 		}
+		if (m_hit_left == true)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
+		if (m_hit_right == true)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
 
 		//•ûŒü
 		if (m_move == false)
