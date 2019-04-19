@@ -17,7 +17,7 @@ public:
 	void Init();   //イ二シャライズ
 	void Action();	//アクション
 	void Draw();    //ドロー
-	int m_map[19][65]; //マップ情報
+	int m_map[19][120]; //マップ情報
 
 	void SetFall(bool t) { Fall_f = t; }
 
