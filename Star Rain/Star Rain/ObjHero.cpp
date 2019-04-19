@@ -92,7 +92,7 @@ void CObjHero::Action()
 	{
 		if (m_hit_down == true && m_time == 0)
 		{
-			m_vy = -9;
+			m_vy = -7;
 			g_py += m_vy;
 
 		}
@@ -102,7 +102,7 @@ void CObjHero::Action()
 	{
 		if (m_hit_down == true && m_time == 0)
 		{
-			m_vy = -9;
+			m_vy = -7;
 			g_py += m_vy;
 
 		}
@@ -294,7 +294,8 @@ void CObjHero::Action()
 	}
 
 	//敵と当ったているか確認
-	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr)
+	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr||
+		hit->CheckObjNameHit(OBJ_METEOFALL) != nullptr)
 	{
 		Scene::SetScene(new CSceneOver());
 		////主人公が敵とどの角度当ったているかを確認

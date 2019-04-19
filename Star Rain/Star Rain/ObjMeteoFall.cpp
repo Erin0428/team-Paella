@@ -37,7 +37,7 @@ void ObjMeteoFall::Init()
 	m_hit_right = false;
 
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 80, 80, ELEMENT_ENEMY, OBJ_METEOFALL, 1);
+	Hits::SetHitBox(this, m_px, m_py, 65, 60, ELEMENT_ENEMY, OBJ_METEOFALL, 1);
 
 }
 
@@ -53,7 +53,7 @@ void ObjMeteoFall::Action()
 
 	//HitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px + block->GetScroll(), m_py);
+	hit->SetPos(m_px+10 + block->GetScroll(), m_py+8);
 
 	if (hx > m_px - 440)
 	{
@@ -136,8 +136,8 @@ void ObjMeteoFall::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right =55.0f;
-	src.m_bottom = 63.0f;
+	src.m_right =56.0f;
+	src.m_bottom = 64.0f;
 
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	//表示位置の設定
