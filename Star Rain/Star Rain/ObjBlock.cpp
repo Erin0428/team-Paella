@@ -126,7 +126,7 @@ void CObjBlock::Draw()
 				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
 				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
-				Draw::Draw(9, &src, &dst, c, 0.0f);
+				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
 		}
 	}
