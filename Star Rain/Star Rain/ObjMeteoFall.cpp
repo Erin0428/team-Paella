@@ -37,7 +37,7 @@ void ObjMeteoFall::Init()
 	m_hit_right = false;
 
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 80, 80, ELEMENT_ENEMY, OBJ_METEOFALL, 1);
+	Hits::SetHitBox(this, m_px, m_py, 65, 60, ELEMENT_ENEMY, OBJ_METEOFALL, 1);
 
 }
 
@@ -53,7 +53,9 @@ void ObjMeteoFall::Action()
 
 	//HitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px + block->GetScroll(), m_py);
+	hit->SetPos(m_px+10 + block->GetScroll(), m_py+8);
+
+	
 
 	if (hx > m_px - 440)
 	{
@@ -92,11 +94,11 @@ void ObjMeteoFall::Action()
 
 
 	//ブロックタイプ検知用の変数がないためのダミー
-	int d;
+	//int d;
 
 	//ブロックとの当たり判定実行
-	ObjMeteo* pd = (ObjMeteo*)Objs::GetObj(OBJ_METEO);
-	pd->MeteoHit(&m_px, &m_py, false,
+	CObjBlock* pd = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	pd->BlockHit(&m_px, &m_py, false,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type
 	);
@@ -117,8 +119,8 @@ void ObjMeteoFall::Action()
 	m_px += m_vx;
 	m_py += m_vy;
 	
-	//バレットに当たっているか
-	/*if (hit->CheckObjNameHit(ELEMENT_BULLET) != nullptr)
+	//ブロックに当たっているか
+	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
@@ -136,8 +138,8 @@ void ObjMeteoFall::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right =55.0f;
-	src.m_bottom = 63.0f;
+	src.m_right =56.0f;
+	src.m_bottom = 64.0f;
 
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	//表示位置の設定

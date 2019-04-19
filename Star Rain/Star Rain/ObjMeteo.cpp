@@ -34,7 +34,7 @@ void ObjMeteo::Init()
 	m_hit_right = false;
 
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 32, 32, ELEMENT_ENEMY, OBJ_METEO, 1);
+	Hits::SetHitBox(this, m_px, m_py, 128, 32, ELEMENT_ENEMY, OBJ_METEO, 1);
 }
 
 //アクション
@@ -119,21 +119,21 @@ void ObjMeteo::Draw()
 				//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = ALL_BLOCK_SIZE;
-	src.m_bottom = ALL_BLOCK_SIZE;
+	src.m_right = 140.0f;
+	src.m_bottom = 50.0f;
 
 
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//表示位置の設定
-	dst.m_top = 0.0f + m_py;						//↓描画に対してスクロールの影響を加える
-	dst.m_left = (ALL_BLOCK_SIZE * m_posture) + m_px + block->GetScroll();
-	dst.m_right = (ALL_BLOCK_SIZE - ALL_BLOCK_SIZE * m_posture) + m_px + block->GetScroll();
+	dst.m_top = -15.0f + m_py;						//↓描画に対してスクロールの影響を加える
+	dst.m_left = (ALL_BLOCK_SIZE * m_posture) + m_px-40 + block->GetScroll();
+	dst.m_right = (ALL_BLOCK_SIZE - ALL_BLOCK_SIZE * m_posture) + m_px+145 + block->GetScroll();
 	dst.m_bottom = ALL_BLOCK_SIZE + m_py;
 
 	//描画
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+	Draw::Draw(4, &src, &dst, c, 0.0f);
 }
 
 //wallHit関数

@@ -94,9 +94,9 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
-	//隕石オブジェクト作成
-	// CObjMeteo*meteo = new CObjMeteo();
-
+	////隕石オブジェクト作成
+	//ObjMeteo*objm = new ObjMeteo();
+	//Objs::InsertObj(objm, OBJ_METEO, 10);
 
 	//タイムオブジェクト作成
 	//C0bjTime* objt = new C0bjTime();
