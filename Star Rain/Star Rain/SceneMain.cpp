@@ -43,7 +43,12 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 
 	if (g_map_chenge == 0)
-		p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
+		
+			p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
+		else if (g_map_chenge == 1)
+			p = Save::ExternalDataOpen(L"map2.csv", &size);//外部データ読み込み
+		else if (g_map_chenge == 2)
+			p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
 
 	int map[19][120];
 	int count = 1;

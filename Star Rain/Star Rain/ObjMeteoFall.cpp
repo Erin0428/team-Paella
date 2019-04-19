@@ -124,7 +124,7 @@ void ObjMeteoFall::Action()
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-	}*/
+	}
 }
 //ƒhƒ[
 void ObjMeteoFall::Draw()
