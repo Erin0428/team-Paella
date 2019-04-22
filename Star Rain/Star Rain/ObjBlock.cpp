@@ -126,7 +126,7 @@ void CObjBlock::Draw()
 				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
 				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
-				Draw::Draw(9, &src, &dst, c, 0.0f);
+				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
 		}
 	}
@@ -200,7 +200,7 @@ void CObjBlock::BlockHit(
 					if (len < 79.0f)
 					{
 						//角度で上下左右を判定
-						if ((r < 75 && r>0) || r > 315)
+						if ((r < 75 && r>0) || r > 285)
 						{
 							//右
 							*right = true;//オブジェクトの左の部分が衝突している
@@ -227,7 +227,7 @@ void CObjBlock::BlockHit(
 							*x = bx - 50.0f + (scroll);//ブロックの位置-主人公の幅
 							*vx = -(*vx)*0.0f;//-VX*反発係数
 						}
-						if (r > 225 && r < 315)
+						if (r > 225 && r < 285)
 						{
 							//下
 							*up = true;//主人公の上の部分が衝突している

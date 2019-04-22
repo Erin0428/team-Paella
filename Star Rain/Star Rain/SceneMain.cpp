@@ -43,7 +43,12 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 
 	if (g_map_chenge == 0)
-		p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
+		
+			p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
+		else if (g_map_chenge == 1)
+			p = Save::ExternalDataOpen(L"map2.csv", &size);//外部データ読み込み
+		else if (g_map_chenge == 2)
+			p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
 
 	int map[19][120];
 	int count = 1;
@@ -75,12 +80,10 @@ void CSceneMain::InitScene()
 	Font::SetStrTex(L"0123456789分秒");
 
 	//外部グラフィックファイルを読み込み0番に登録(576×384ピクセル)
-	Draw::LoadImage(L"無題.png", 0, TEX_SIZE_576);
-	Draw::LoadImage(L"Bullet.png", 7, TEX_SIZE_768);
-	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
-	Draw::LoadImage(L"Fallingmeteo.png", 4, TEX_SIZE_768);
-
-	Draw::LoadImage(L"隕石(仮).png", 9, TEX_SIZE_768);
+	Draw::LoadImage(L"主人公.png", 0, TEX_SIZE_576);
+	Draw::LoadImage(L"落下隕石.png", 7, TEX_SIZE_768);
+	Draw::LoadImage(L"ゴール.png", 5, TEX_SIZE_64);
+	Draw::LoadImage(L"設置型隕石.png", 4, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
@@ -94,9 +97,9 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
-	//隕石オブジェクト作成
-	// CObjMeteo*meteo = new CObjMeteo();
-
+	////隕石オブジェクト作成
+	//ObjMeteo*objm = new ObjMeteo();
+	//Objs::InsertObj(objm, OBJ_METEO, 10);
 
 	//タイムオブジェクト作成
 	//C0bjTime* objt = new C0bjTime();
