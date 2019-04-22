@@ -44,6 +44,8 @@ void CObjClear::Action()
 
 				Scene::SetScene(new CSceneMain());
 				m_key_flag = false;
+
+				g_map_chenge += 1;
 			}
 		}
 		else
