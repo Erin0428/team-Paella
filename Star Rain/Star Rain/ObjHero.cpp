@@ -177,7 +177,7 @@ void CObjHero::Action()
 	//m_vx += -(m_vx*0.098);
 
 	//Ž©—R—Ž‰º‰^“®
-	m_vy += 3.0 / (16.0f);
+	m_vy += 2.0 / (16.0f); //‰Šú’l@m_vx+=3.0/(16.0f);
 
 	//–€ŽC
 	m_vx += -(m_vx*0.098);
