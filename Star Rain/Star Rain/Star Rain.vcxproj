@@ -133,7 +133,9 @@
     <ClCompile Include="Objgoalblock.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMeteo.cpp" />
-    <ClCompile Include="ObjMeteoFall.cpp" />
+    <ClCompile Include="ObjMeteoFall.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ObjOver.cpp" />
     <ClCompile Include="ObjTime.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -170,7 +172,9 @@
     <ClInclude Include="Objgoalblock.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMeteo.h" />
-    <ClInclude Include="ObjMeteoFall.h" />
+    <ClInclude Include="ObjMeteoFall.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjOver.h" />
     <ClInclude Include="ObjTime.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
