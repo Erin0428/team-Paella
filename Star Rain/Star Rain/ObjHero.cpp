@@ -102,7 +102,7 @@ void CObjHero::Action()
 		}
 		if (m_hit_down == true && g_map_chenge == 2)
 		{
-			m_vy = -4;
+			m_vy = -6;
 			g_py + m_vy;
 		}
 
@@ -122,7 +122,7 @@ void CObjHero::Action()
 		}
 		if (m_hit_down == true && g_map_chenge == 2)
 		{
-			m_vy = -5;
+			m_vy = -6;
 			g_py + m_vy;
 		}
 

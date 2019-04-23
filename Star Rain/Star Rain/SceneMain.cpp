@@ -95,6 +95,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"Bullet.png", 7, TEX_SIZE_768);
 	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
 	Draw::LoadImage(L"İ’uŒ^è¦Î[‰ü.png", 4, TEX_SIZE_768);
+	Draw::LoadImage(L"İ’uŒ^è¦Î‚Q‰ü.png", 6, TEX_SIZE_768);
 
 	Draw::LoadImage(L"è¦Î(‰¼).png", 9, TEX_SIZE_768);
 
