@@ -95,6 +95,11 @@ void CObjHero::Action()
 			m_vy = -7;
 			g_py += m_vy;
 
+			if (m_hit_down == true && m_time == 0 && g_map_chenge == 1)
+			{
+				m_vy = -5;
+				g_py + m_vy;
+			}
 		}
 	}
 	//ジャンプ
@@ -105,6 +110,11 @@ void CObjHero::Action()
 			m_vy = -8;
 			g_py += m_vy;
 
+			if (m_hit_down == true && m_time == 0 && g_map_chenge == 1)
+			{
+				m_vy = -5;
+				g_py + m_vy;
+			}
 		}
 	}
 	if (m_time > 0) {
