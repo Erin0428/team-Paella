@@ -90,12 +90,12 @@ void CObjHero::Action()
 	//ジャンプ
 	if (Input::GetVKey(VK_SPACE) == true)
 	{
-		if (m_hit_down == true && m_time == 0)
+   		if (m_hit_down == true && g_map_chenge == 0)
 		{
-			m_vy = -7;
+			m_vy = -10;
 			g_py += m_vy;
 
-			if (m_hit_down == true && m_time == 0 && g_map_chenge == 1)
+			if (m_hit_down == true  && g_map_chenge == 1)
 			{
 				m_vy = -5;
 				g_py + m_vy;
@@ -105,24 +105,24 @@ void CObjHero::Action()
 	//ジャンプ
 	else if (Input::GetVKey('W') == true)
 	{
-		if (m_hit_down == true && m_time == 0)
+		if (m_hit_down == true && g_map_chenge == 0)
 		{
 			m_vy = -10;
 			g_py += m_vy;
 
-			if (m_hit_down == true && m_time == 0 && g_map_chenge == 1)
+			if (m_hit_down == true && g_map_chenge == 1)
 			{
 				m_vy = -5;
 				g_py + m_vy;
 			}
 		}
 	}
-	if (m_time > 0) {
-		m_time--;
-		if (m_time <= 0) {
-			m_time = 0;
-		}
-	}
+	//if (m_time > 0) {
+	//	m_time--;
+	//	if (m_time <= 0) {
+	//		m_time = 0;
+	//	}
+	//}
 
 	//自身のHitBoxを持ってくる
 	CHitBox*hit = Hits::GetHitBox(this);
