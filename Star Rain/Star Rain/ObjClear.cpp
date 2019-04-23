@@ -41,9 +41,19 @@ void CObjClear::Action()
 			{
 				g_px = 64.0f;
 				g_py = 500.0f;
+				
+				g_map_chenge += 1;
+				/*if (g_map_chenge == 10)
+				{
+					Scene::SetScene(new CSceneED())
+						m_key_flag = false;
+				}
+				else*/
+				{
 
-				Scene::SetScene(new CSceneMain());
-				m_key_flag = false;
+					Scene::SetScene(new CSceneMain());
+					m_key_flag = false;
+				}
 			}
 		}
 		else
@@ -56,7 +66,7 @@ void CObjClear::Action()
 		if (Input::GetVKey(VK_BACK) == true)
 		{
 			Scene::SetScene(new CSceneTitle());
-			g_map_chenge = 0;
+			g_map_chenge = 0;	//マップ変更
 			m_key_flag = false;
 		}
 	}
