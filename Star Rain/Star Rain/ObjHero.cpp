@@ -1,4 +1,4 @@
-//g—p‚·‚éƒwƒbƒ_[ƒtƒ@ƒCƒ‹
+ï»¿//ä½¿ç”¨ã™ã‚‹ãƒ˜ãƒƒãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\SceneManager.h"
@@ -8,23 +8,23 @@
 #include "GameHead.h"
 #include "ObjHero.h"
 
-//g—p‚·‚éƒl[ƒ€ƒXƒy[ƒX
+//ä½¿ç”¨ã™ã‚‹ãƒãƒ¼ãƒ ã‚¹ãƒšãƒ¼ã‚¹
 using namespace GameL;
 
 float g_px = 64.0f;
 float g_py = 450.0f;
 
-//ƒCƒjƒVƒƒƒ‰ƒCƒY
+//ã‚¤ãƒ‹ã‚·ãƒ£ãƒ©ã‚¤ã‚º
 void CObjHero::Init()
 {
 	m_pos_x = 0.0f;
 	m_pos_y = 0.0f;
-	m_vx = 0.0f; //ˆÚ“®ƒxƒNƒgƒ‹
+	m_vx = 0.0f; //ç§»å‹•ãƒ™ã‚¯ãƒˆãƒ«
 	m_vy = 0.0f;
-	m_posture = 1.0f; //‰EŒü‚«0.0f,¶Œü‚«1.0f
+	m_posture = 1.0f; //å³å‘ã0.0f,å·¦å‘ã1.0f
 
 	m_ani_time = 0;
-	m_ani_frame = 0;  //Ã~ƒtƒŒ[ƒ€‚ğ‰Šú‰»‚·‚é
+	m_ani_frame = 0;  //é™æ­¢ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’åˆæœŸåŒ–ã™ã‚‹
 
 	m_hit_up = false;
 	m_hit_down = false;
@@ -37,11 +37,11 @@ void CObjHero::Init()
 
 	m_key_f == false;
 
-	m_block_type = 0;	//“¥‚ñ‚Å‚¢‚éƒuƒƒbƒN‚Ìí—Ş
+	m_block_type = 0;	//è¸ã‚“ã§ã„ã‚‹ãƒ–ãƒ­ãƒƒã‚¯ã®ç¨®é¡
 
 
-	m_speed_power = 0.5f;//’Êí‘¬“x
-	m_ani_max_time = 4;  //ƒAƒjƒ[ƒVƒ‡ƒ“ŠÔŠu•
+	m_speed_power = 0.5f;//é€šå¸¸é€Ÿåº¦
+	m_ani_max_time = 4;  //ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³é–“éš”å¹…
 
 	m_time = 31;
 
@@ -49,33 +49,33 @@ void CObjHero::Init()
 	hit_size_x = 0;
 	hit_size_x2 = 0;
 
-	//“–‚½‚è”»’è—p‚ÌHitBox‚ğì¬				
+	//å½“ãŸã‚Šåˆ¤å®šç”¨ã®HitBoxã‚’ä½œæˆ				
 	Hits::SetHitBox(this, g_px, g_py, 64, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
-//ƒAƒNƒVƒ‡ƒ“
+//ã‚¢ã‚¯ã‚·ãƒ§ãƒ³
 void CObjHero::Action()
 {
 	hit_size = 0;
 	hit_size_x = 0;
 	hit_size_x2 = 0;
 
-	//—‰º‚É‚æ‚éƒQ[ƒ€ƒI[ƒo[•ƒŠƒXƒ^[ƒg
+	//è½ä¸‹ã«ã‚ˆã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ï¼†ãƒªã‚¹ã‚¿ãƒ¼ãƒˆ
 	if (g_py > 1000.0f)
 	{
-		//êŠO‚Éo‚½‚çƒŠƒXƒ^[ƒg
+		//å ´å¤–ã«å‡ºãŸã‚‰ãƒªã‚¹ã‚¿ãƒ¼ãƒˆ
 		Scene::SetScene(new CSceneOver());
 	}
 
 	m_speed_power = 0.5f;
 
 
-	////ålŒö‹@‚Ì’eŠÛ”­Ë
+	////ä¸»äººå…¬æ©Ÿã®å¼¾ä¸¸ç™ºå°„
 	//if (Input::GetVKey('Z') == true)
 	//{
 	//	if (m_f == true)
 	//	{
-	//		//’eŠÛƒIƒuƒWƒFƒNƒgì¬
+	//		//å¼¾ä¸¸ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆ
 	//		CObjBullet* obj_b = new CObjBullet(g_px + 30.0f, g_py + 15.0f);
 	//		Objs::InsertObj(obj_b, OBJ_BULLET, 14);
 
@@ -87,7 +87,7 @@ void CObjHero::Action()
 	//	m_f = true;
 	//}
 
-	//ƒWƒƒƒ“ƒv
+	//ã‚¸ãƒ£ãƒ³ãƒ—
 	if (Input::GetVKey(VK_SPACE) == true)
 	{
 		if (m_hit_down == true && m_time == 0)
@@ -97,7 +97,7 @@ void CObjHero::Action()
 
 		}
 	}
-	//ƒWƒƒƒ“ƒv
+	//ã‚¸ãƒ£ãƒ³ãƒ—
 	else if (Input::GetVKey('W') == true)
 	{
 		if (m_hit_down == true && m_time == 0)
@@ -114,7 +114,7 @@ void CObjHero::Action()
 		}
 	}
 
-	//©g‚ÌHitBox‚ğ‚Á‚Ä‚­‚é
+	//è‡ªèº«ã®HitBoxã‚’æŒã£ã¦ãã‚‹
 	CHitBox*hit = Hits::GetHitBox(this);
 
 	if (m_ani_frame >= 4)
@@ -138,7 +138,7 @@ void CObjHero::Action()
 
 	else
 	{
-		m_ani_frame = 1;   //ƒL[“ü—Í‚ª–³‚¢ê‡Ã~ƒtƒŒ[ƒ€‚É‚·‚é
+		m_ani_frame = 1;   //ã‚­ãƒ¼å…¥åŠ›ãŒç„¡ã„å ´åˆé™æ­¢ãƒ•ãƒ¬ãƒ¼ãƒ ã«ã™ã‚‹
 		m_ani_time = 0;
 	}
 	if (m_ani_time > m_ani_max_time)
@@ -151,7 +151,7 @@ void CObjHero::Action()
 		m_ani_frame = 0;
 	}
 
-	//ålŒö‹@‚ª—ÌˆæŠOs‚©‚È‚¢ˆ—
+	//ä¸»äººå…¬æ©ŸãŒé ˜åŸŸå¤–è¡Œã‹ãªã„å‡¦ç†
 	if (g_px + 64.0f > 800.0f)
 	{
 		g_px = 800.0f - 64.0f;
@@ -159,46 +159,46 @@ void CObjHero::Action()
 	}
 
 	CObjBlock*b = (CObjBlock*)Objs::GetObj(OBJ_HERO);
-	//Œã•ûƒXƒNƒ[ƒ‹ƒ‰ƒCƒ“
+	//å¾Œæ–¹ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒ©ã‚¤ãƒ³
 	if (g_px < 80)
 	{
 		g_px = 80;
 		b->SetScroll(b->GetScroll());
 	}
 
-	//‘O•ûƒXƒNƒ[ƒ‹ƒ‰ƒCƒ“
+	//å‰æ–¹ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒ©ã‚¤ãƒ³
 	if (g_px > 350)
 	{
 		g_px = 350;
 		b->SetScroll(b->GetScroll());
 	}
 
-	//–€C
+	//æ‘©æ“¦
 	//m_vx += -(m_vx*0.098);
 
-	//©—R—‰º‰^“®
+	//è‡ªç”±è½ä¸‹é‹å‹•
 	m_vy += 3.0 / (16.0f);
 
-	//–€C
+	//æ‘©æ“¦
 	m_vx += -(m_vx*0.098);
 
-	//ƒuƒƒbƒN‚Æ‚Ì“–‚½‚è”»’èÀs
+	//ãƒ–ãƒ­ãƒƒã‚¯ã¨ã®å½“ãŸã‚Šåˆ¤å®šå®Ÿè¡Œ
 	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	pb->BlockHit(&g_px, &g_py, true,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type
 	);
 
-	//“G‚Æ“–‚Á‚½‚Ä‚¢‚é‚©Šm”F
+	//æ•µã¨å½“ã£ãŸã¦ã„ã‚‹ã‹ç¢ºèª
 	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr)
 	{
-		//ålŒö‚ª“G‚Æ‚Ç‚ÌŠp“x“–‚Á‚½‚Ä‚¢‚é‚©‚ğŠm”F
-		HIT_DATA**hit_data;           //“–‚½‚Á‚½‚Ì×‚©‚Èî•ñ‚ğ“ü‚ê‚é‚½‚ß‚Ì\‘¢‘Ì
-		hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_data‚ÉålŒö‚Æ“–‚½‚Á‚Ä‚¢‚é‘¼‘S‚Ä‚ÌHitBox‚Æ‚Ìî•ñ‚ğ“ü‚ê‚é
+		//ä¸»äººå…¬ãŒæ•µã¨ã©ã®è§’åº¦å½“ã£ãŸã¦ã„ã‚‹ã‹ã‚’ç¢ºèª
+		HIT_DATA**hit_data;           //å½“ãŸã£ãŸæ™‚ã®ç´°ã‹ãªæƒ…å ±ã‚’å…¥ã‚Œã‚‹ãŸã‚ã®æ§‹é€ ä½“
+		hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_dataã«ä¸»äººå…¬ã¨å½“ãŸã£ã¦ã„ã‚‹ä»–å…¨ã¦ã®HitBoxã¨ã®æƒ…å ±ã‚’å…¥ã‚Œã‚‹
 
 		for (int i = 0; i < hit->GetCount(); i++)
 		{
-			//“G‚Ì¶‰E‚É“–‚½‚Á‚½‚ç
+			//æ•µã®å·¦å³ã«å½“ãŸã£ãŸã‚‰
 			float r = 0;
 			for (int i = 0; i < 10; i++)
 			{
@@ -237,16 +237,16 @@ void CObjHero::Action()
 		}
 	}
 
-	//“G‚Æ“–‚Á‚½‚Ä‚¢‚é‚©Šm”F
+	//æ•µã¨å½“ã£ãŸã¦ã„ã‚‹ã‹ç¢ºèª
 	if (hit->CheckObjNameHit(OBJ_METEOFALL) != nullptr)
 	{
-		//ålŒö‚ª“G‚Æ‚Ç‚ÌŠp“x“–‚Á‚½‚Ä‚¢‚é‚©‚ğŠm”F
-		HIT_DATA**hit_data;           //“–‚½‚Á‚½‚Ì×‚©‚Èî•ñ‚ğ“ü‚ê‚é‚½‚ß‚Ì\‘¢‘Ì
-		hit_data = hit->SearchObjNameHit(OBJ_METEOFALL);//hit_data‚ÉålŒö‚Æ“–‚½‚Á‚Ä‚¢‚é‘¼‘S‚Ä‚ÌHitBox‚Æ‚Ìî•ñ‚ğ“ü‚ê‚é
+		//ä¸»äººå…¬ãŒæ•µã¨ã©ã®è§’åº¦å½“ã£ãŸã¦ã„ã‚‹ã‹ã‚’ç¢ºèª
+		HIT_DATA**hit_data;           //å½“ãŸã£ãŸæ™‚ã®ç´°ã‹ãªæƒ…å ±ã‚’å…¥ã‚Œã‚‹ãŸã‚ã®æ§‹é€ ä½“
+		hit_data = hit->SearchObjNameHit(OBJ_METEOFALL);//hit_dataã«ä¸»äººå…¬ã¨å½“ãŸã£ã¦ã„ã‚‹ä»–å…¨ã¦ã®HitBoxã¨ã®æƒ…å ±ã‚’å…¥ã‚Œã‚‹
 
 		for (int i = 0; i < hit->GetCount(); i++)
 		{
-			//“G‚Ì¶‰E‚É“–‚½‚Á‚½‚ç
+			//æ•µã®å·¦å³ã«å½“ãŸã£ãŸã‚‰
 			float r = 0;
 			for (int i = 0; i < 10; i++)
 			{
@@ -293,18 +293,18 @@ void CObjHero::Action()
 		}
 	}
 
-	//“G‚Æ“–‚Á‚½‚Ä‚¢‚é‚©Šm”F
+	//æ•µã¨å½“ã£ãŸã¦ã„ã‚‹ã‹ç¢ºèª
 	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr||
 		hit->CheckObjNameHit(OBJ_METEOFALL) != nullptr)
 	{
 		Scene::SetScene(new CSceneOver());
-		////ålŒö‚ª“G‚Æ‚Ç‚ÌŠp“x“–‚Á‚½‚Ä‚¢‚é‚©‚ğŠm”F
-		//HIT_DATA**hit_data;           //“–‚½‚Á‚½‚Ì×‚©‚Èî•ñ‚ğ“ü‚ê‚é‚½‚ß‚Ì\‘¢‘Ì
-		//hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_data‚ÉålŒö‚Æ“–‚½‚Á‚Ä‚¢‚é‘¼‘S‚Ä‚ÌHitBox‚Æ‚Ìî•ñ‚ğ“ü‚ê‚é
+		////ä¸»äººå…¬ãŒæ•µã¨ã©ã®è§’åº¦å½“ã£ãŸã¦ã„ã‚‹ã‹ã‚’ç¢ºèª
+		//HIT_DATA**hit_data;           //å½“ãŸã£ãŸæ™‚ã®ç´°ã‹ãªæƒ…å ±ã‚’å…¥ã‚Œã‚‹ãŸã‚ã®æ§‹é€ ä½“
+		//hit_data = hit->SearchObjNameHit(OBJ_METEO);//hit_dataã«ä¸»äººå…¬ã¨å½“ãŸã£ã¦ã„ã‚‹ä»–å…¨ã¦ã®HitBoxã¨ã®æƒ…å ±ã‚’å…¥ã‚Œã‚‹
 
 		//for (int i = 0; i < hit->GetCount(); i++)
 		//{
-		//	//“G‚Ì¶‰E‚É“–‚½‚Á‚½‚ç
+		//	//æ•µã®å·¦å³ã«å½“ãŸã£ãŸã‚‰
 		//	float r = 0;
 		//	for (int i = 0; i < 10; i++)
 		//	{
@@ -323,24 +323,24 @@ void CObjHero::Action()
 		//}
 	}
 
-	//ˆÊ’u‚ÌXV
+	//ä½ç½®ã®æ›´æ–°
 	g_px += m_vx;
 	g_py += m_vy;
 	m_pos_x += m_vx;
 	m_pos_y += m_vy;
 
-	//HitBox‚ÌˆÊ’u‚ğXV
+	//HitBoxã®ä½ç½®ã‚’æ›´æ–°
 	hit->SetPos(g_px + 18 - hit_size_x, g_py + hit_size, 64 - hit_size, 32 + hit_size_x2);
 
 	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
 	{
-		Scene::SetScene(new CSceneOver());//êŠO‚Éo‚½‚çƒŠƒXƒ^[ƒg
+		Scene::SetScene(new CSceneOver());//å ´å¤–ã«å‡ºãŸã‚‰ãƒªã‚¹ã‚¿ãƒ¼ãƒˆ
 		g_px = 64.0f;
 		g_py = 500.0f;
 	}
 }
 
-//ƒhƒ[
+//ãƒ‰ãƒ­ãƒ¼
 void CObjHero::Draw()
 {
 	int AniData[4] =
@@ -348,16 +348,16 @@ void CObjHero::Draw()
 		1,0,2,0
 	};
 
-	//•`‰æƒJƒ‰[î•ñ
+	//æç”»ã‚«ãƒ©ãƒ¼æƒ…å ±
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	RECT_F src;//•`‰æŒ³Ø‚èæ‚èˆÊ’u
-	RECT_F dst;//•`‰ææ•\¦ˆÊ’u
+	RECT_F src;//æç”»å…ƒåˆ‡ã‚Šå–ã‚Šä½ç½®
+	RECT_F dst;//æç”»å…ˆè¡¨ç¤ºä½ç½®
 
 	if (m_posture == 1)
 	{
-		//D‚ª“ü—Í‚³‚ê‚½‚Ì
-		//Ø‚èæ‚èˆÊ’u‚Ìİ’è
+		//DãŒå…¥åŠ›ã•ã‚ŒãŸæ™‚ã®
+		//åˆ‡ã‚Šå–ã‚Šä½ç½®ã®è¨­å®š
 		src.m_top = 0.0f;
 		src.m_left = 0.0f + AniData[m_ani_frame] * 100;
 		src.m_right = 100.0f + AniData[m_ani_frame] * 100;
@@ -365,19 +365,19 @@ void CObjHero::Draw()
 	}
 	else if (m_posture == 2)
 	{
-		//A‚ª“ü—Í‚³‚ê‚½‚Ì
-		//Ø‚èæ‚èˆÊ’u‚Ìİ’è
+		//AãŒå…¥åŠ›ã•ã‚ŒãŸæ™‚ã®
+		//åˆ‡ã‚Šå–ã‚Šä½ç½®ã®è¨­å®š
 		src.m_top = 101.0f;
 		src.m_left = 0.0f + AniData[m_ani_frame] * 100;
 		src.m_right = 100.0f + AniData[m_ani_frame] * 100;
 		src.m_bottom = 200.0f;
 	}
-	//•\¦ˆÊ’u‚Ìİ’è
+	//è¡¨ç¤ºä½ç½®ã®è¨­å®š
 	dst.m_top = 0.0f + g_py;
 	dst.m_left = 0.0f + g_px;
 	dst.m_right = 64.0f + g_px;
 	dst.m_bottom = 64.0f + g_py;
 
-	//•`‰æ
+	//æç”»
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }
