@@ -107,7 +107,7 @@ void CObjHero::Action()
 	{
 		if (m_hit_down == true && m_time == 0)
 		{
-			m_vy = -7;
+			m_vy = -10;
 			g_py += m_vy;
 
 			if (m_hit_down == true && m_time == 0 && g_map_chenge == 1)
