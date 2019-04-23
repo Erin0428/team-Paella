@@ -82,16 +82,6 @@ void ObjMeteoFall::Action()
 			this->SetStatus(false);
 			Hits::DeleteHitBox(this);
 		}
-		if (m_hit_left == true)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}
-		if (m_hit_right == true)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}
 
 		//方向
 		if (m_move == false)
@@ -104,11 +94,11 @@ void ObjMeteoFall::Action()
 
 
 	//ブロックタイプ検知用の変数がないためのダミー
-	//int d;
+	int d;
 
 	//ブロックとの当たり判定実行
-	CObjBlock* pd = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	pd->BlockHit(&m_px, &m_py, false,
+	ObjMeteo* pd = (ObjMeteo*)Objs::GetObj(OBJ_METEO);
+	pd->MeteoHit(&m_px, &m_py, false,
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type
 	);
@@ -129,12 +119,12 @@ void ObjMeteoFall::Action()
 	m_px += m_vx;
 	m_py += m_vy;
 	
-	//ブロックに当たっているか
-	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
+	//バレットに当たっているか
+	/*if (hit->CheckObjNameHit(ELEMENT_BULLET) != nullptr)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
-	}
+	}*/
 }
 //ドロー
 void ObjMeteoFall::Draw()
