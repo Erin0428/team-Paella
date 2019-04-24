@@ -131,11 +131,17 @@ void CObjBlock::Draw()
 			//設置メテオ２表示
 			else if (m_map[i][j] == 6)
 			{
+				//切り取り位置の設定
+				src.m_top = 0.0f;
+				src.m_left = 0.0f;
+				src.m_right = 128.0f;
+				src.m_bottom = 128.0f;
+
 				//表示位置の設定
 				dst.m_top = i*ALL_BLOCK_SIZE;
 				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
-				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
-				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
+				dst.m_right = dst.m_left + 128;
+				dst.m_bottom = dst.m_top + 128;
 
 				Draw::Draw(6, &src, &dst, c, 0.0f);
 			}

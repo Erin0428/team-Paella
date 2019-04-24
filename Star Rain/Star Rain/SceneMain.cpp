@@ -72,19 +72,19 @@ void CSceneMain::InitScene()
 	if (g_map_chenge == 0)
 	{
 		Draw::LoadImage(L"îwåi1.jpg", 3, TEX_SIZE_1920);
-		Draw::LoadImage(L"block1.png", 2, TEX_SIZE_768);
+		Draw::LoadImage(L"âFíàÇÃínñ .png", 2, TEX_SIZE_768);
 	}
 
 	if (g_map_chenge == 1)
 	{
 		Draw::LoadImage(L"îwåi2.jpg", 3, TEX_SIZE_1920);
-		Draw::LoadImage(L"block1.png", 2, TEX_SIZE_768);
+		Draw::LoadImage(L"âFíàÇÃínñ .png", 2, TEX_SIZE_768);
 	}
 
 	if (g_map_chenge == 2)
 	{
 		Draw::LoadImage(L"îwåi2.jpg", 3, TEX_SIZE_1920);
-		Draw::LoadImage(L"block1.png", 2, TEX_SIZE_768);
+		Draw::LoadImage(L"âFíàÇÃínñ .png", 2, TEX_SIZE_768);
 	}
 
 	//FontçÏê¨
