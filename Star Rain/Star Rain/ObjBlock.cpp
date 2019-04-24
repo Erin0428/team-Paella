@@ -82,7 +82,6 @@ void CObjBlock::Action()
 				Objs::InsertObj(ends, OBJ_GOAL_BLOCK, 11);
 				m_map[i][j] = 0;
 			}
-
 		}
 	}
 }
