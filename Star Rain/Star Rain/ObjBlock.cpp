@@ -138,7 +138,7 @@ void CObjBlock::Draw()
 				src.m_bottom = 128.0f;
 
 				//ï\é¶à íuÇÃê›íË
-				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_top = i*ALL_BLOCK_SIZE-64;
 				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
 				dst.m_right = dst.m_left + 128;
 				dst.m_bottom = dst.m_top + 128;
