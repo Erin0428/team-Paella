@@ -29,9 +29,6 @@ void CObjBlock::Init()
 
 	m_ani_max_time = 15;
 
-	//“–‚½‚è”»’è—p‚ÌHitBox‚ğì¬				
-	Hits::SetHitBox(this, g_px, g_py, 64, 64, ELEMENT_PLAYER, OBJ_BLOCK, 1);
-
 }
 
 
