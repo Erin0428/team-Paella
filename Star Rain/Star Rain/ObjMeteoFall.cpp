@@ -62,7 +62,7 @@ void ObjMeteoFall::Action()
 		Fall_f = true;
 	}
 	if (Fall_f == true)
-	{
+	{ 
 		//—Ž‰º
 		if (m_py > 1000.0f)
 		{
