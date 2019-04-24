@@ -91,13 +91,11 @@ void CSceneMain::InitScene()
 	Font::SetStrTex(L"0123456789分秒");
 
 	//外部グラフィックファイルを読み込み0番に登録(576×384ピクセル)
-	Draw::LoadImage(L"無題.png", 0, TEX_SIZE_576);
-	Draw::LoadImage(L"Bullet.png", 7, TEX_SIZE_768);
+	Draw::LoadImage(L"主人公.png", 0, TEX_SIZE_576);
+	Draw::LoadImage(L"隕石 中.png", 7, TEX_SIZE_768);
 	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
 	Draw::LoadImage(L"設置型隕石ー改.png", 4, TEX_SIZE_768);
 	Draw::LoadImage(L"設置型隕石２改.png", 6, TEX_SIZE_768);
-
-	Draw::LoadImage(L"隕石(仮).png", 9, TEX_SIZE_768);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
