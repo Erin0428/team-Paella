@@ -92,7 +92,7 @@ void CObjHero::Action()
 	{
 		if (m_hit_down == true && g_map_chenge == 0)
 		{
-			m_vy = -10;
+			m_vy = -8;
 			g_py += m_vy;
 		}
 		if (m_hit_down == true && g_map_chenge == 1)
@@ -112,7 +112,7 @@ void CObjHero::Action()
 	{
 		if (m_hit_down == true && g_map_chenge == 0)
 		{
-			m_vy = -10;
+			m_vy = -8;
 			g_py += m_vy;
 		}
 		if (m_hit_down == true && g_map_chenge == 1)
