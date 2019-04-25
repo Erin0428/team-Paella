@@ -18,6 +18,9 @@ enum OBJ_NAME
 	OBJ_GOAL_BLOCK,
 	OBJ_METEOFALL,
 	OBJ_METEO,
+	OBJ_METEOFALLS,
+	OBJ_METEOFALLL,
+	OBJ_METEOFALLLR,
 	//OBJ_BULLET,
 };
 //------------------------------------------------
@@ -80,6 +83,9 @@ extern bool g_f;
 #include"ObjMeteoFall.h"
 #include"ObjMeteo.h"
 //#include"CObjBullet.h"
+#include"ObjMeteoFallS.h"
+#include"ObjMeteoFallL.h"
+#include"ObjMeteoFallLR.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

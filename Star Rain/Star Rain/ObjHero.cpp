@@ -180,7 +180,7 @@ void CObjHero::Action()
 	m_vy += 3.0 / (16.0f);
 
 	//摩擦
-	m_vx += -(m_vx*0.098);
+	m_vx += -(m_vx*0.050);
 
 	//ブロックとの当たり判定実行
 	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);

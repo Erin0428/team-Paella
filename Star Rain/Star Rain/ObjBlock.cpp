@@ -79,6 +79,19 @@ void CObjBlock::Action()
 				Objs::InsertObj(ends, OBJ_GOAL_BLOCK, 11);
 				m_map[i][j] = 0;
 			}
+			else if (m_map[i][j] == 7)
+			{
+				ObjMeteoFallS* mtof = new ObjMeteoFallS(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLS, 17);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 8)
+			{
+				ObjMeteoFallLR* mtof = new ObjMeteoFallLR(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLLR, 17);
+				m_map[i][j] = 0;
+			}
+
 
 		}
 	}
