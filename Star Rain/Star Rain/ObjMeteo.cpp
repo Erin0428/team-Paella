@@ -87,7 +87,7 @@ void ObjMeteo::Action()
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	m_scrollx = block->GetScrollX();
 	m_scrolly = block->GetScrollY();
-	memcpy(m_map, block->m_map, sizeof(int) * 19 * 65);
+	memcpy(m_map, block->m_map, sizeof(int) * 19 * 120);
 
 	//位置の更新
 	/*m_px += m_vx;
@@ -116,10 +116,10 @@ void ObjMeteo::Draw()
 	RECT_F src;	//描画元切り取り位置
 	RECT_F dst;	//描画先表示位置
 
-				//切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 140.0f;
+	src.m_right = 135.0f;
 	src.m_bottom = 50.0f;
 
 
@@ -169,7 +169,7 @@ void ObjMeteo::MeteoHit(
 	for (int i = 0; i < 19; i++)
 	{
 
-		for (int j = 0; j < 65; j++)
+		for (int j = 0; j < 120; j++)
 		{
 			if (m_map[i][j] > 0 && m_map[i][j] != 30)
 			{

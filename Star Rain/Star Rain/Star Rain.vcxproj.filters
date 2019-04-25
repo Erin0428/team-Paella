@@ -34,6 +34,9 @@
     <Filter Include="ソース ファイル\Scene">
       <UniqueIdentifier>{d4d20cbc-be17-4df9-b885-466cbe8fd5c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\ALL METEO">
+      <UniqueIdentifier>{3e732fa1-0ded-41c5-af11-786a7aeb5620}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -117,14 +120,14 @@
     <ClCompile Include="GameL\DrawTexture.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMeteoFall.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMeteo.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="CObjBullet.cpp">
       <Filter>ソース ファイル\ObjHero</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteo.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFall.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
     <ClCompile Include="ObjMeteoFallS.cpp">
       <Filter>ソース ファイル\Scene</Filter>
@@ -218,14 +221,14 @@
     <ClInclude Include="GameL\DrawTexture.h">
       <Filter>リソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMeteoFall.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMeteo.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CObjBullet.h">
       <Filter>ソース ファイル\ObjHero</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteo.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFall.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
     <ClInclude Include="ObjMeteoFallS.h">
       <Filter>ソース ファイル\Scene</Filter>
