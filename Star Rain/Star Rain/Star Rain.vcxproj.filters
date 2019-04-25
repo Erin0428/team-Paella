@@ -137,6 +137,8 @@
     </ClCompile>
     <ClCompile Include="ObjMeteoFallLR.cpp">
       <Filter>ソース ファイル\Scene</Filter>
+    <ClCompile Include="ObjMeteoFall.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -232,10 +234,16 @@
     </ClInclude>
     <ClInclude Include="ObjMeteoFallS.h">
       <Filter>ソース ファイル\Scene</Filter>
+    <ClInclude Include="CObjBullet.h">
+      <Filter>ソース ファイル\ObjHero</Filter>
     </ClInclude>
     <ClInclude Include="ObjMeteoFallL.h">
       <Filter>ソース ファイル\Scene</Filter>
+    <ClInclude Include="ObjMeteo.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
+    <ClInclude Include="ObjMeteoFall.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     <ClInclude Include="ObjMeteoFallLR.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
