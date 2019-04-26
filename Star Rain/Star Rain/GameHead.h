@@ -17,8 +17,13 @@ enum OBJ_NAME
 	OBJ_TIME,
 	OBJ_GOAL_BLOCK,
 	OBJ_METEOFALL,
+	OBJ_METEOFALLS,
+	OBJ_METEOFALLL,
+	OBJ_METEOFALLLR,
 	OBJ_METEO,
-	//OBJ_BULLET,
+	OBJ_BULLET,
+	OBJ_ENDING,
+
 };
 //------------------------------------------------
 
@@ -38,7 +43,7 @@ enum HIT_ELEMENTS
 	ELEMENT_BLUE,
 	ELEMENT_BLACK,
 	ELEMENT_WHITE,
-	//ELEMENT_BULLET,
+	ELEMENT_BULLET,
 	ELEMENT_BLOCK,
 
 };
@@ -81,6 +86,10 @@ extern bool g_f;
 #include"ObjMeteoFall.h"
 #include"ObjMeteo.h"
 //#include"CObjBullet.h"
+#include"ObjMeteoFallS.h"
+#include"ObjMeteoFallL.h"
+#include"ObjMeteoFallLR.h"
+#include"ObjEnding.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -90,11 +99,12 @@ extern bool g_f;
 #include"SceneClear.h"
 #include"SceneOver.h"
 //#include"SceneMenu.h"
+#include "SceneEnding.h"
 
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneEnding
 
 //-----------------------------------------------

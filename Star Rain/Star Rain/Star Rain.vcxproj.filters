@@ -37,6 +37,9 @@
     <Filter Include="ソース ファイル\ALL METEO">
       <UniqueIdentifier>{3e732fa1-0ded-41c5-af11-786a7aeb5620}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Ending">
+      <UniqueIdentifier>{8b373c63-1788-40c5-b360-1e139edf5b40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -129,6 +132,21 @@
     <ClCompile Include="ObjMeteoFall.cpp">
       <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
+    <ClCompile Include="ObjMeteoFallLR.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallS.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallL.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEnding.cpp">
+      <Filter>ソース ファイル\Ending</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnding.cpp">
+      <Filter>ソース ファイル\Ending</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -220,6 +238,21 @@
     </ClInclude>
     <ClInclude Include="ObjMeteoFall.h">
       <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallL.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallLR.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallS.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEnding.h">
+      <Filter>ソース ファイル\Ending</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEnding.h">
+      <Filter>ソース ファイル\Ending</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
