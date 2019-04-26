@@ -134,7 +134,6 @@
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMeteo.cpp" />
     <ClCompile Include="ObjMeteoFall.cpp" />
-    <ClCompile Include="ObjMeteoFallLcpp.cpp" />
     <ClCompile Include="ObjMeteoFallLR.cpp" />
     <ClCompile Include="ObjMeteoFallS.cpp" />
     <ClCompile Include="ObjMeteoFall.cpp">
