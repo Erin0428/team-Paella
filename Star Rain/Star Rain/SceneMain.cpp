@@ -45,7 +45,7 @@ void CSceneMain::InitScene()
 	if (g_map_chenge == 0)
 			p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
 		if (g_map_chenge == 1)
-			p = Save::ExternalDataOpen(L"map2.csv", &size);//外部データ読み込み
+			p = Save::ExternalDataOpen(L"map2_1.csv", &size);//外部データ読み込み
 		if (g_map_chenge == 2)
 			p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
 
@@ -96,6 +96,8 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
 	Draw::LoadImage(L"設置型隕石ー改.png", 4, TEX_SIZE_768);
 	Draw::LoadImage(L"設置型隕石２改.png", 6, TEX_SIZE_768);
+	Draw::LoadImage(L"隕石小.png", 8, TEX_SIZE_64);
+	Draw::LoadImage(L"隕石　大.png", 9, TEX_SIZE_64);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();

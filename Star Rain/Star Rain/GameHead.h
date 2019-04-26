@@ -17,8 +17,14 @@ enum OBJ_NAME
 	OBJ_TIME,
 	OBJ_GOAL_BLOCK,
 	OBJ_METEOFALL,
+	OBJ_METEOFALLS,
+	OBJ_METEOFALLL,
+	OBJ_METEOFALLLR,
 	OBJ_METEO,
-	//OBJ_BULLET,
+	OBJ_BULLET,
+	OBJ_METEO2,
+
+
 };
 //------------------------------------------------
 
@@ -38,7 +44,7 @@ enum HIT_ELEMENTS
 	ELEMENT_BLUE,
 	ELEMENT_BLACK,
 	ELEMENT_WHITE,
-	//ELEMENT_BULLET,
+	ELEMENT_BULLET,
 	ELEMENT_BLOCK,
 
 };
@@ -81,6 +87,10 @@ extern bool g_f;
 #include"ObjMeteoFall.h"
 #include"ObjMeteo.h"
 //#include"CObjBullet.h"
+#include"ObjMeteoFallS.h"
+#include"ObjMeteoFallL.h"
+#include"ObjMeteoFallLR.h"
+#include"ObjMeteo2.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

@@ -63,6 +63,7 @@ void CObjBlock::Action()
 		{
 			if (m_map[i][j] == 2)
 			{
+
 				ObjMeteo* mto = new ObjMeteo(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
 				Objs::InsertObj(mto, OBJ_METEO, 14);
 				m_map[i][j] = 0;
@@ -77,6 +78,25 @@ void CObjBlock::Action()
 			{
 				CObjgoalblock* ends = new CObjgoalblock(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
 				Objs::InsertObj(ends, OBJ_GOAL_BLOCK, 11);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 6)
+			{
+
+				ObjMeteo2* mto2 = new ObjMeteo2(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mto2, OBJ_METEO2, 14);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 7)
+			{
+				ObjMeteoFallS* mtof = new ObjMeteoFallS(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLS, 17);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 8)
+			{
+				ObjMeteoFallLR* mtof = new ObjMeteoFallLR(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLLR, 17);
 				m_map[i][j] = 0;
 			}
 		}
@@ -128,19 +148,13 @@ void CObjBlock::Draw()
 				Draw::Draw(4, &src, &dst, c, 0.0f);
 			}
 			//設置メテオ２表示
-			else if (m_map[i][j] == 6)
+			else if (m_map[i][j] == 3)
 			{
-				//切り取り位置の設定
-				src.m_top = 0.0f;
-				src.m_left = 0.0f;
-				src.m_right = 128.0f;
-				src.m_bottom = 128.0f;
-
 				//表示位置の設定
-				dst.m_top = i*ALL_BLOCK_SIZE-64;
-				dst.m_left = j*ALL_BLOCK_SIZE + m_scroll;
-				dst.m_right = dst.m_left + 128;
-				dst.m_bottom = dst.m_top + 128;
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE+m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(6, &src, &dst, c, 0.0f);
 			}
