@@ -133,6 +133,10 @@
     <ClCompile Include="Objgoalblock.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMeteo.cpp" />
+    <ClCompile Include="ObjMeteoFall.cpp" />
+    <ClCompile Include="ObjMeteoFallLcpp.cpp" />
+    <ClCompile Include="ObjMeteoFallLR.cpp" />
+    <ClCompile Include="ObjMeteoFallS.cpp" />
     <ClCompile Include="ObjMeteoFall.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -175,6 +179,10 @@
     <ClInclude Include="Objgoalblock.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMeteo.h" />
+    <ClInclude Include="ObjMeteoFall.h" />
+    <ClInclude Include="ObjMeteoFallL.h" />
+    <ClInclude Include="ObjMeteoFallLR.h" />
+    <ClInclude Include="ObjMeteoFallS.h" />
     <ClInclude Include="ObjMeteoFall.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
