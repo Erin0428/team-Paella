@@ -91,6 +91,8 @@ void CObjBlock::Action()
 				Objs::InsertObj(mtof, OBJ_METEOFALLLR, 17);
 				m_map[i][j] = 0;
 			}
+
+
 		}
 	}
 }

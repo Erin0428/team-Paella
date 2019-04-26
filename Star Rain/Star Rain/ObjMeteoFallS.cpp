@@ -57,7 +57,7 @@ void ObjMeteoFallS::Action()
 
 
 
-	if (hx > m_px - 220)
+	if (hx > m_px - 440)
 	{
 		Fall_f = true;
 	}
@@ -113,7 +113,17 @@ void ObjMeteoFallS::Action()
 		&m_block_type
 	);
 
+	if (m_speed_power_y >= 1.0f)
+	{
+		m_speed_power_y += -0.1f;
+		m_speed_power_y += 0.1f;
+	}
 
+	if (m_speed_power_y <= 1.0f)
+	{
+		m_speed_power_y += 1.0f;
+		m_speed_power_y += -0.1f;
+	}
 
 	//ˆÊ’u‚ÌXV
 	m_px += m_vx;
