@@ -107,6 +107,28 @@ void CObjHero::Action()
 		}
 
 	}
+
+	//ジャンプ
+	if (Input::GetVKey(VK_UP) == true)
+	{
+		if (m_hit_down == true && g_map_chenge == 0)
+		{
+			m_vy = -8;
+			g_py += m_vy;
+		}
+		if (m_hit_down == true && g_map_chenge == 1)
+		{
+			m_vy = -7;
+			g_py + m_vy;
+		}
+		if (m_hit_down == true && g_map_chenge == 2)
+		{
+			m_vy = -6;
+			g_py + m_vy;
+		}
+
+	}
+
 	//ジャンプ
 	else if (Input::GetVKey('W') == true)
 	{
@@ -114,6 +136,7 @@ void CObjHero::Action()
 		{
 			m_vy = -8;
 			g_py += m_vy;
+			
 		}
 		if (m_hit_down == true && g_map_chenge == 1)
 		{
@@ -149,7 +172,22 @@ void CObjHero::Action()
 		m_posture = 1.0f;
 		m_ani_time += 1;
 	}
+
+	else if (Input::GetVKey(VK_RIGHT) == true)
+	{
+		m_vx += m_speed_power;
+		m_posture = 1.0f;
+		m_ani_time += 1;
+	}
+
 	else if (Input::GetVKey('A') == true)
+	{
+		m_vx -= m_speed_power;
+		m_posture = 2.0f;
+		m_ani_time += 1;
+	}
+
+	else if (Input::GetVKey(VK_LEFT) == true)
 	{
 		m_vx -= m_speed_power;
 		m_posture = 2.0f;

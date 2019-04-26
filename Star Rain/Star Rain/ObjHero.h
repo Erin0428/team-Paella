@@ -83,5 +83,5 @@ private:
 	int hit_size_x;
 	int hit_size_x2;
 
-
+	int Calc_KE;
 };

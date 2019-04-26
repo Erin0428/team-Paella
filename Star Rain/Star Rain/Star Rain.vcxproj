@@ -136,6 +136,9 @@
     <ClCompile Include="ObjMeteoFall.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ObjMeteoFallL.cpp" />
+    <ClCompile Include="ObjMeteoFallLR.cpp" />
+    <ClCompile Include="ObjMeteoFallS.cpp" />
     <ClCompile Include="ObjOver.cpp" />
     <ClCompile Include="ObjTime.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -175,6 +178,9 @@
     <ClInclude Include="ObjMeteoFall.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="ObjMeteoFallL.h" />
+    <ClInclude Include="ObjMeteoFallLR.h" />
+    <ClInclude Include="ObjMeteoFallS.h" />
     <ClInclude Include="ObjOver.h" />
     <ClInclude Include="ObjTime.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
