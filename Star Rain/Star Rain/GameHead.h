@@ -26,7 +26,7 @@ enum OBJ_NAME
 
 
 	OBJ_BULLET,
-
+	OBJ_ENDING,
 
 };
 //------------------------------------------------
@@ -93,6 +93,7 @@ extern bool g_f;
 #include"ObjMeteoFallS.h"
 #include"ObjMeteoFallL.h"
 #include"ObjMeteoFallLR.h"
+#include"ObjEnding.h"
 #include"ObjMeteo2.h"
 //------------------------------------------------
 
@@ -103,11 +104,12 @@ extern bool g_f;
 #include"SceneClear.h"
 #include"SceneOver.h"
 //#include"SceneMenu.h"
+#include "SceneEnding.h"
 
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneEnding
 
 //-----------------------------------------------

@@ -130,6 +130,7 @@
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjClear.cpp" />
+    <ClCompile Include="ObjEnding.cpp" />
     <ClCompile Include="Objgoalblock.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMeteo.cpp" />
@@ -149,6 +150,7 @@
     </ClCompile>
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneClear.cpp" />
+    <ClCompile Include="SceneEnding.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
@@ -176,6 +178,7 @@
     <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjClear.h" />
+    <ClInclude Include="ObjEnding.h" />
     <ClInclude Include="Objgoalblock.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMeteo.h" />
@@ -196,6 +199,7 @@
     </ClInclude>
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneClear.h" />
+    <ClInclude Include="SceneEnding.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneOver.h" />
     <ClInclude Include="SceneTitle.h" />

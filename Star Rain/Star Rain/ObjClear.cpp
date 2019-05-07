@@ -43,12 +43,12 @@ void CObjClear::Action()
 				g_py = 500.0f;
 				
 				g_map_chenge += 1;
-				/*if (g_map_chenge == 10)
+				if (g_map_chenge == 3)
 				{
-					Scene::SetScene(new CSceneED())
-						m_key_flag = false;
+					Scene::SetScene(new CSceneEnding());
+						//m_key_flag = false;
 				}
-				else*/
+				else
 				{
 
 					Scene::SetScene(new CSceneMain());
