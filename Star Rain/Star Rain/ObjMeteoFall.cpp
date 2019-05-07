@@ -125,18 +125,6 @@ void ObjMeteoFall::Action()
 		&m_block_type
 	);
 
-	if (m_speed_power_y >= 1.0f)
-	{
-		m_speed_power_y += -0.1f;
-		m_speed_power_y += 0.1f;
-	}
-
-	if (m_speed_power_y <= 1.0f)
-	{
-		m_speed_power_y += 1.0f;
-		m_speed_power_y += -0.1f;
-	}
-
 	//ˆÊ’u‚ÌXV
 	m_px += m_vx;
 	m_py += m_vy;
