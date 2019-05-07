@@ -48,6 +48,7 @@ void ObjMeteoFallLR::Init()
 
 //アクション
 void ObjMeteoFallLR::Action()
+
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
