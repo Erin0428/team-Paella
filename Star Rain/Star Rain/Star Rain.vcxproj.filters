@@ -143,6 +143,8 @@
     </ClCompile>
     <ClCompile Include="SceneEnding.cpp">
       <Filter>ソース ファイル\Ending</Filter>
+    <ClCompile Include="ObjMeteo2.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
     <ClCompile Include="ObjEnding.cpp">
       <Filter>ソース ファイル\Ending</Filter>
@@ -253,6 +255,8 @@
     </ClInclude>
     <ClInclude Include="ObjEnding.h">
       <Filter>ソース ファイル\Ending</Filter>
+    <ClInclude Include="ObjMeteo2.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

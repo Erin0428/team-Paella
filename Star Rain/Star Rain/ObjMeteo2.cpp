@@ -5,7 +5,7 @@
 #include "GameL\HitBoxManager.h"
 
 #include "GameHead.h"
-#include "ObjMeteo.h"
+#include "ObjMeteo2.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -27,14 +27,14 @@ void ObjMeteo2::Init()
 
 	m_move = true;			//true=右 false=左
 
-	//blockとの衝突状態確認
+							//blockとの衝突状態確認
 	m_hit_up = false;
 	m_hit_down = false;
 	m_hit_left = false;
 	m_hit_right = false;
 
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 128, 32, ELEMENT_ENEMY, OBJ_METEO, 1);
+	Hits::SetHitBox(this, m_px, m_py, 160, 122, ELEMENT_ENEMY, OBJ_METEO2, 1);
 }
 
 //アクション
@@ -81,6 +81,7 @@ void ObjMeteo2::Action()
 
 
 	//ブロックタイプ検知用の変数がないためのダミー
+
 	int d;
 
 	//ブロック情報を持ってくる
@@ -93,15 +94,16 @@ void ObjMeteo2::Action()
 	/*m_px += m_vx;
 	m_py += m_vy;*/
 
+
 	//HitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px + block->GetScroll(), m_py);
+	hit->SetPos(m_px + block->GetScroll(), m_py - 90);
 
 	//バレットに当たっているか
 	/*if (hit->CheckObjNameHit(ELEMENT_BULLET) != nullptr)
 	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
+	this->SetStatus(false);
+	Hits::DeleteHitBox(this);
 	}*/
 
 }
@@ -127,13 +129,13 @@ void ObjMeteo2::Draw()
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//表示位置の設定
-	dst.m_top = -15.0f + m_py;						//↓描画に対してスクロールの影響を加える
-	dst.m_left = (ALL_BLOCK_SIZE * m_posture) + m_px - 40 + block->GetScroll();
-	dst.m_right = (ALL_BLOCK_SIZE - ALL_BLOCK_SIZE * m_posture) + m_px + 145 + block->GetScroll();
+	dst.m_top = -110.0f + m_py;						//↓描画に対してスクロールの影響を加える
+	dst.m_left = (ALL_BLOCK_SIZE * m_posture) + m_px - 30 + block->GetScroll();
+	dst.m_right = (ALL_BLOCK_SIZE - ALL_BLOCK_SIZE * m_posture) + m_px + 160 + block->GetScroll();
 	dst.m_bottom = ALL_BLOCK_SIZE + m_py;
 
 	//描画
-	Draw::Draw(4, &src, &dst, c, 0.0f);
+	Draw::Draw(6, &src, &dst, c, 0.0f);
 }
 
 //wallHit関数
@@ -149,7 +151,7 @@ void ObjMeteo2::Draw()
 //引数１０  int * bt            :下部分判定時、特殊なブロックのタイプを返す
 //判定を行うobjectとブロック64×64限定で、当たり判定と上下左右判定を行う
 //その結果は引数4～10に返す
-void ObjMeteo::MeteoHit(
+void ObjMeteo2::Meteo2Hit(
 	float*x, float*y, bool scroll_on,
 	bool*up, bool*down, bool*left, bool*right,
 	float*vx, float*vy, int*bt
@@ -174,15 +176,15 @@ void ObjMeteo::MeteoHit(
 			if (m_map[i][j] > 0 && m_map[i][j] != 30)
 			{
 				//要素番号を座標に変更
-				float bx = j * 32.0f;
-				float by = i * 32.0f;
+				float bx = j*32.0f;
+				float by = i*32.0f;
 
 				//スクロールの影響
 				float scrollx = scroll_on ? m_scrollx : 0;
 				float scrolly = scroll_on ? m_scrolly : 0;
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + (-scrollx) + 32.0f > bx) && (*x + (-scrollx) < bx + 32.0f) && (*y + (-scrolly) + 32.0f > by) && (*y + (-scrolly) < by + 32.0f))
+				if ((*x + (-scrollx) + 32.0f > bx) && (*x + (-scrollx) < bx + 32.0f) && (*y + (-scrolly) + 32.0f > by) && (*y + (-scrolly)< by + 32.0f))
 				{
 					//上下左右判定
 
@@ -191,11 +193,11 @@ void ObjMeteo::MeteoHit(
 					float rvy = (*y + (-scrolly)) - by;
 
 					//長さを求める
-					float len = sqrt(rvx*rvx + rvy * rvy);
+					float len = sqrt(rvx*rvx + rvy*rvy);
 
 					//角度を求める
 					float r = atan2(rvy, rvx);
-					r = r * 180.0f / 3.14f;
+					r = r*180.0f / 3.14f;
 
 					if (r < 0.0f)
 						r = abs(r);

@@ -22,6 +22,7 @@ enum OBJ_NAME
 	OBJ_METEOFALLLR,
 	OBJ_METEO,
 	OBJ_BULLET,
+	OBJ_METEO2,
 	OBJ_ENDING,
 
 };
@@ -90,6 +91,7 @@ extern bool g_f;
 #include"ObjMeteoFallL.h"
 #include"ObjMeteoFallLR.h"
 #include"ObjEnding.h"
+#include"ObjMeteo2.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
