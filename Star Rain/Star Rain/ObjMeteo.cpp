@@ -19,6 +19,9 @@ ObjMeteo::ObjMeteo(float x, float y)
 //イニシャライズ
 void ObjMeteo::Init()
 {
+	m_ani_time = 0;
+	m_ani_frame = 0;
+	m_ani_max_time = 15;
 	m_vx = 0.0f;		//移動ベクトル
 	m_vy = 0.0f;
 	m_posture = 1.0f;	//右向き0.0f 左向き1.0f
@@ -45,6 +48,16 @@ void ObjMeteo::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
+	m_ani_time += 1;
+	if (m_ani_time > m_ani_max_time)
+	{
+		m_ani_frame += 1;
+		m_ani_time = 0;
+	}
+	if (m_ani_frame == 7)
+	{
+		m_ani_frame = 0;
+	}
 	//落下
 	//if (m_py > 1000.0f)
 	//{
@@ -109,6 +122,10 @@ void ObjMeteo::Action()
 //ドロー
 void ObjMeteo::Draw()
 {
+	int AniData[7] =
+	{
+		0,1,2,3,4,5,6
+	};
 
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
@@ -118,8 +135,8 @@ void ObjMeteo::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 135.0f;
+	src.m_left = 0.0f - AniData[m_ani_frame] * 128;
+	src.m_right = 130.0f - AniData[m_ani_frame] * 128;
 	src.m_bottom = 50.0f;
 
 
@@ -128,7 +145,7 @@ void ObjMeteo::Draw()
 
 	//表示位置の設定
 	dst.m_top = -15.0f + m_py;						//↓描画に対してスクロールの影響を加える
-	dst.m_left = (ALL_BLOCK_SIZE * m_posture) + m_px-40 + block->GetScroll();
+	dst.m_left = (ALL_BLOCK_SIZE * m_posture) + m_px-35+ block->GetScroll();
 	dst.m_right = (ALL_BLOCK_SIZE - ALL_BLOCK_SIZE * m_posture) + m_px+145 + block->GetScroll();
 	dst.m_bottom = ALL_BLOCK_SIZE + m_py;
 

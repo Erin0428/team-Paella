@@ -57,7 +57,7 @@ void ObjMeteoFallS::Action()
 
 
 
-	if (hx > m_px - 440)
+	if (hx > m_px - 220)
 	{
 		Fall_f = true;
 	}

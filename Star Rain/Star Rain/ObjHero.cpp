@@ -67,7 +67,7 @@ void CObjHero::Action()
 		Scene::SetScene(new CSceneOver());
 	}
 
-	m_speed_power = 0.5f;
+	m_speed_power = 0.3f;
 
 
 	////主人公機の弾丸発射
