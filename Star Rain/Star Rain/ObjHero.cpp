@@ -70,22 +70,22 @@ void CObjHero::Action()
 	m_speed_power = 0.5f;
 
 
-	////主人公機の弾丸発射
-	//if (Input::GetVKey('Z') == true)
-	//{
-	//	if (m_f == true)
-	//	{
-	//		//弾丸オブジェクト作成
-	//		CObjBullet* obj_b = new CObjBullet(g_px + 30.0f, g_py + 15.0f);
-	//		Objs::InsertObj(obj_b, OBJ_BULLET, 14);
+	//主人公機の弾丸発射
+	if (Input::GetVKey('Z') == true)
+	{
+		if (m_f == true)
+		{
+			//弾丸オブジェクト作成
+			CObjBullet* obj_b = new CObjBullet(g_px + 30.0f, g_py + 15.0f);
+			Objs::InsertObj(obj_b, OBJ_BULLET, 14);
 
-	//		m_f = false;
-	//	}
-	//}
-	//else
-	//{
-	//	m_f = true;
-	//}
+			m_f = false;
+		}
+	}
+	else
+	{
+		m_f = true;
+	}
 
 	//ジャンプ
 	if (Input::GetVKey(VK_SPACE) == true)
