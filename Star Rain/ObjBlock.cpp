@@ -91,6 +91,12 @@ void CObjBlock::Action()
 				Objs::InsertObj(mtof, OBJ_METEOFALLLR, 17);
 				m_map[i][j] = 0;
 			}
+			else if (m_map[i][j] == 9)
+			{
+				Objsmallmeteo* smto = new Objsmallmeteo(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(smto, OBJ_SMALLMETEO, 12);
+				m_map[i][j] = 0;
+			}
 		}
 	}
 }

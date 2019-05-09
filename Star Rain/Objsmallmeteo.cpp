@@ -5,19 +5,19 @@
 #include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
-#include"ObjMeteoFallS.h"
+#include"Objsmallmeteo.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-ObjMeteoFallS::ObjMeteoFallS(float x, float y)
+Objsmallmeteo::Objsmallmeteo(float x, float y)
 {
 	m_px = x;
 	m_py = y;
 }
 
 //イニシャライズ
-void ObjMeteoFallS::Init()
+void Objsmallmeteo::Init()
 {
 	m_speed_power_y = 1.3f;	//通常速度
 	m_speed_power_x = 1.3f;	//通常速度
@@ -42,7 +42,7 @@ void ObjMeteoFallS::Init()
 }
 
 //アクション
-void ObjMeteoFallS::Action()
+void Objsmallmeteo::Action()
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -57,7 +57,7 @@ void ObjMeteoFallS::Action()
 
 
 
-	if (hx > m_px - 220)
+	if (hx > m_px - 400)
 	{
 		Fall_f = true;
 	}
@@ -70,17 +70,19 @@ void ObjMeteoFallS::Action()
 		}
 
 		m_speed_power_y = +0.5f;  //隕石落下速度y
-		m_speed_power_x = -0.3f;	 //通常速度
+		m_speed_power_x = -0.4f;	 //通常速度
 
-		//ブロック衝突で向き変更
+									 //ブロック衝突で向き変更
 		if (m_hit_up == true)
 		{
 			m_move = false;
 		}
 		if (m_hit_down == true)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+			m_speed_power_y = +0.5f;
+			/*this->SetStatus(false);
+			Hits::DeleteHitBox(this);*/
+			
 		}
 		if (m_hit_left == true)
 		{
@@ -137,7 +139,7 @@ void ObjMeteoFallS::Action()
 	}
 }
 //ドロー
-void ObjMeteoFallS::Draw()
+void Objsmallmeteo::Draw()
 {
 	//描写カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
@@ -145,7 +147,7 @@ void ObjMeteoFallS::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-	//切り取り位置の設定
+			   //切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 64.0f;
@@ -158,6 +160,6 @@ void ObjMeteoFallS::Draw()
 	dst.m_right = 32.0f + m_px + block->GetScroll();
 	dst.m_bottom = 32.0f + m_py;
 
-	Draw::Draw(8, &src, &dst, c, 0.0f);
+	Draw::Draw(12, &src, &dst, c, 0.0f);
 
 }

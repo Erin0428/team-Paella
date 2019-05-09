@@ -143,7 +143,9 @@
     <ClCompile Include="ObjMeteoFallL.cpp" />
     <ClCompile Include="ObjMeteoFallLR.cpp" />
     <ClCompile Include="ObjMeteoFallS.cpp" />
+    <ClCompile Include="ObjOP.cpp" />
     <ClCompile Include="ObjOver.cpp" />
+    <ClCompile Include="Objsmallmeteo.cpp" />
     <ClCompile Include="ObjTime.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
@@ -151,6 +153,7 @@
     <ClCompile Include="SceneClear.cpp" />
     <ClCompile Include="SceneEnding.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneOP.cpp" />
     <ClCompile Include="SceneOver.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -191,7 +194,9 @@
     <ClInclude Include="ObjMeteoFallL.h" />
     <ClInclude Include="ObjMeteoFallLR.h" />
     <ClInclude Include="ObjMeteoFallS.h" />
+    <ClInclude Include="ObjOP.h" />
     <ClInclude Include="ObjOver.h" />
+    <ClInclude Include="Objsmallmeteo.h" />
     <ClInclude Include="ObjTime.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
@@ -199,6 +204,7 @@
     <ClInclude Include="SceneClear.h" />
     <ClInclude Include="SceneEnding.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneOP.h" />
     <ClInclude Include="SceneOver.h" />
     <ClInclude Include="SceneTitle.h" />
   </ItemGroup>

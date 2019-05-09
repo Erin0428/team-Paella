@@ -21,6 +21,7 @@ ObjMeteoFallLR::ObjMeteoFallLR(float x, float y)
 //イニシャライズ
 void ObjMeteoFallLR::Init()
 {
+
 	m_speed_power_y = 1.3f;	//通常速度
 	m_speed_power_x = 1.3f;	//通常速度
 	m_vx = 0.0f;
@@ -47,6 +48,7 @@ void ObjMeteoFallLR::Init()
 
 //アクション
 void ObjMeteoFallLR::Action()
+
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -129,6 +131,18 @@ void ObjMeteoFallLR::Action()
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type
 	);
+
+	if (m_speed_power_y >= 1.0f)
+	{
+		m_speed_power_y += -0.1f;
+		m_speed_power_y += 0.1f;
+	}
+
+	if (m_speed_power_y <= 1.0f)
+	{
+		m_speed_power_y += 1.0f;
+		m_speed_power_y += -0.1f;
+	}
 
 	//位置の更新
 	m_px += m_vx;

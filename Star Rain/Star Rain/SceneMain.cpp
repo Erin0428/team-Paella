@@ -7,7 +7,6 @@
 #include "GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
-#include"GameL\DrawFont.h"
 #include"GameL\Audio.h"
 
 
@@ -94,16 +93,17 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"主人公.png", 0, TEX_SIZE_576);
 	Draw::LoadImage(L"落下隕石.png", 7, TEX_SIZE_768);
 	Draw::LoadImage(L"ゴール.png", 5, TEX_SIZE_64);
-	Draw::LoadImage(L"設置型隕石.png", 4, TEX_SIZE_768);
+	//Draw::LoadImage(L"設置型隕石.png", 4, TEX_SIZE_768);
 	Draw::LoadImage(L"隕石小.png", 8, TEX_SIZE_64);
 	Draw::LoadImage(L"隕石　大.png", 9, TEX_SIZE_64);
 
 	Draw::LoadImage(L"隕石 中.png", 7, TEX_SIZE_768);
 	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
-	Draw::LoadImage(L"設置型隕石ー改.png", 4, TEX_SIZE_768);
+	//Draw::LoadImage(L"設置型隕石ー改.png", 4, TEX_SIZE_768);
 	Draw::LoadImage(L"設置型隕石２改.png", 6, TEX_SIZE_768);
 	Draw::LoadImage(L"隕石小.png", 8, TEX_SIZE_64);
 	Draw::LoadImage(L"隕石　大.png", 9, TEX_SIZE_64);
+	Draw::LoadImage(L"隕石改改.png", 4, TEX_SIZE_64);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();

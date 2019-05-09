@@ -22,7 +22,7 @@ public:
 	int m_map[19][120]; //マップ情報
 
 	//ブロックの当たり判定
-	void MeteoHit(
+	void Meteo2Hit(
 		float*x, float*y, bool scroll_on,
 		bool*up, bool*down, bool*left, bool*right,
 		float*vx, float*vy, int*bt

@@ -58,7 +58,7 @@ void CObjTitle::Action()
 				g_px = 64.0f;
 				g_py = 500.0f;
 
-				Scene::SetScene(new CSceneMain());
+				Scene::SetScene(new CSceneOP());
 			}
 		}
 		else
