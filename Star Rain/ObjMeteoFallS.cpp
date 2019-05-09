@@ -79,10 +79,8 @@ void ObjMeteoFallS::Action()
 		}
 		if (m_hit_down == true)
 		{
-			m_speed_power_x -= 0.01f;
-			m_speed_power_y = 0.5f;
-			/*this->SetStatus(false);
-			Hits::DeleteHitBox(this);*/
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
 		}
 		if (m_hit_left == true)
 		{
