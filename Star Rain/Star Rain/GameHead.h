@@ -17,6 +17,9 @@ enum OBJ_NAME
 	OBJ_TIME,
 	OBJ_GOAL_BLOCK,
 	OBJ_METEOFALL,
+	OBJ_METEOFALLS,
+	OBJ_METEOFALLL,
+	OBJ_METEOFALLLR,
 	OBJ_METEO,
 	OBJ_METEOFALLS,
 	OBJ_METEOFALLL,
@@ -27,6 +30,9 @@ enum OBJ_NAME
 	OBJ_METEOFALLR,
 	OBJ_METEOFALLZ,
 	OBJ_BULLET,
+	OBJ_METEO2,
+	OBJ_ENDING,
+
 };
 //------------------------------------------------
 
@@ -46,7 +52,7 @@ enum HIT_ELEMENTS
 	ELEMENT_BLUE,
 	ELEMENT_BLACK,
 	ELEMENT_WHITE,
-	//ELEMENT_BULLET,
+	ELEMENT_BULLET,
 	ELEMENT_BLOCK,
 	ELEMENT_BULLET,
 
@@ -65,6 +71,7 @@ struct UserData
 
 //ゲーム内で使用されるグローバル変数・定数・列挙--
 extern int g_map_chenge; //マップ変更
+extern int block2;
 extern bool check;
 extern bool m_c;
 extern bool g_f;
@@ -97,6 +104,9 @@ extern bool g_f;
 #include"ObjMeteoFallSZ.h"
 #include"ObjMeteoFallZ.h"
 #include"ObjMeteoFallR.h"
+#include"ObjMeteoFallLR.h"
+#include"ObjEnding.h"
+#include"ObjMeteo2.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -106,6 +116,7 @@ extern bool g_f;
 #include"SceneClear.h"
 #include"SceneOver.h"
 //#include"SceneMenu.h"
+#include "SceneEnding.h"
 
 //-----------------------------------------------
 

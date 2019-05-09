@@ -7,7 +7,6 @@
 #include "GameL\DrawTexture.h"
 #include"GameL\DrawFont.h"
 #include"GameL\UserData.h"
-#include"GameL\DrawFont.h"
 #include"GameL\Audio.h"
 
 
@@ -43,11 +42,10 @@ void CSceneMain::InitScene()
 	int size;              //ステージ情報の大きさ
 
 	if (g_map_chenge == 0)
-		
-			p = Save::ExternalDataOpen(L"map4.csv", &size);//外部データ読み込み
-		else if (g_map_chenge == 1)
-			p = Save::ExternalDataOpen(L"map2.csv", &size);//外部データ読み込み
-		else if (g_map_chenge == 2)
+			p = Save::ExternalDataOpen(L"map1.csv", &size);//外部データ読み込み
+		if (g_map_chenge == 1)
+			p = Save::ExternalDataOpen(L"map2_1.csv", &size);//外部データ読み込み
+		if (g_map_chenge == 2)
 			p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
 
 	int map[19][120];
@@ -73,7 +71,19 @@ void CSceneMain::InitScene()
 	if (g_map_chenge == 0)
 	{
 		Draw::LoadImage(L"背景1.jpg", 3, TEX_SIZE_1920);
-		Draw::LoadImage(L"block1.png", 2, TEX_SIZE_768);
+		Draw::LoadImage(L"宇宙の地面.png", 2, TEX_SIZE_768);
+	}
+
+	if (g_map_chenge == 1)
+	{
+		Draw::LoadImage(L"背景2.jpg", 3, TEX_SIZE_1920);
+		Draw::LoadImage(L"宇宙の地面.png", 2, TEX_SIZE_768);
+	}
+
+	if (g_map_chenge == 2)
+	{
+		Draw::LoadImage(L"背景2.jpg", 3, TEX_SIZE_1920);
+		Draw::LoadImage(L"宇宙の地面.png", 2, TEX_SIZE_768);
 	}
 
 	//Font作成
@@ -83,10 +93,17 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"主人公.png", 0, TEX_SIZE_576);
 	Draw::LoadImage(L"落下隕石.png", 7, TEX_SIZE_768);
 	Draw::LoadImage(L"ゴール.png", 5, TEX_SIZE_64);
-	Draw::LoadImage(L"設置型隕石.png", 4, TEX_SIZE_768);
+	//Draw::LoadImage(L"設置型隕石.png", 4, TEX_SIZE_768);
 	Draw::LoadImage(L"隕石小.png", 8, TEX_SIZE_64);
 	Draw::LoadImage(L"隕石　大.png", 9, TEX_SIZE_64);
 
+	Draw::LoadImage(L"隕石 中.png", 7, TEX_SIZE_768);
+	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
+	//Draw::LoadImage(L"設置型隕石ー改.png", 4, TEX_SIZE_768);
+	Draw::LoadImage(L"設置型隕石２改.png", 6, TEX_SIZE_768);
+	Draw::LoadImage(L"隕石小.png", 8, TEX_SIZE_64);
+	Draw::LoadImage(L"隕石　大.png", 9, TEX_SIZE_64);
+	Draw::LoadImage(L"隕石改改.png", 4, TEX_SIZE_64);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();

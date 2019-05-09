@@ -63,8 +63,9 @@ void CObjBlock::Action()
 		{
 			if (m_map[i][j] == 2)
 			{
+
 				ObjMeteo* mto = new ObjMeteo(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
-				Objs::InsertObj(mto, OBJ_METEO, 9);
+				Objs::InsertObj(mto, OBJ_METEO, 14);
 				m_map[i][j] = 0;
 			}
 			else if (m_map[i][j] == 3)
@@ -92,7 +93,25 @@ void CObjBlock::Action()
 				m_map[i][j] = 0;
 			}
 
+			else if (m_map[i][j] == 6)
+			{
 
+				ObjMeteo2* mto2 = new ObjMeteo2(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mto2, OBJ_METEO2, 14);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 7)
+			{
+				ObjMeteoFallS* mtof = new ObjMeteoFallS(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLS, 17);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 8)
+			{
+				ObjMeteoFallLR* mtof = new ObjMeteoFallLR(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLLR, 17);
+				m_map[i][j] = 0;
+			}
 		}
 	}
 }
@@ -140,6 +159,17 @@ void CObjBlock::Draw()
 				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
 
 				Draw::Draw(4, &src, &dst, c, 0.0f);
+			}
+			//設置メテオ２表示
+			else if (m_map[i][j] == 3)
+			{
+				//表示位置の設定
+				dst.m_top = i*ALL_BLOCK_SIZE;
+				dst.m_left = j*ALL_BLOCK_SIZE+m_scroll;
+				dst.m_right = dst.m_left + ALL_BLOCK_SIZE;
+				dst.m_bottom = dst.m_top + ALL_BLOCK_SIZE;
+
+				Draw::Draw(6, &src, &dst, c, 0.0f);
 			}
 		}
 	}
@@ -213,7 +243,7 @@ void CObjBlock::BlockHit(
 					if (len < 79.0f)
 					{
 						//角度で上下左右を判定
-						if ((r < 75 && r>0) || r > 285)
+						if ((r < 75 && r>0) || r > 315)
 						{
 							//右
 							*right = true;//オブジェクトの左の部分が衝突している
@@ -227,7 +257,7 @@ void CObjBlock::BlockHit(
 							*down = true;//主人公の下の部分が衝突している
 							*y = by - 64.0f;//ブロックの位置-主人公の幅
 							*vy = 0.0f;
-							if (m_map[i][j] == 2 && r > 70 && r < 120)
+							if (m_map[i][j] == 2 && m_map[i][j] == 6 && r > 70 && r < 120)
 							{
 								Audio::Start(1);
 								Scene::SetScene(new CSceneOver());
