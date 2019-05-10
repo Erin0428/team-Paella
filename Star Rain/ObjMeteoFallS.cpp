@@ -5,28 +5,24 @@
 #include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
-#include"ObjMeteoFallLR.h"
+#include"ObjMeteoFallS.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-ObjMeteoFallLR::ObjMeteoFallLR(float x, float y)
+ObjMeteoFallS::ObjMeteoFallS(float x, float y)
 {
 	m_px = x;
 	m_py = y;
-	m_x = x;
-	m_y = y;
 }
 
 //イニシャライズ
-void ObjMeteoFallLR::Init()
+void ObjMeteoFallS::Init()
 {
 	m_speed_power_y = 1.3f;	//通常速度
 	m_speed_power_x = 1.3f;	//通常速度
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-
-	m_time = 0;
 
 	m_move = false;			//true=上 false=下
 
@@ -40,13 +36,13 @@ void ObjMeteoFallLR::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
-	//確認用のHitBoxを作成
-	Hits::SetHitBox(this, m_px, m_py, 100, 100, ELEMENT_ENEMY, OBJ_METEOFALL, 1);
+	//当たり判定用のHitBoxを作成
+	Hits::SetHitBox(this, m_px, m_py, 16, 16, ELEMENT_ENEMY, OBJ_METEOFALL, 1);
 
 }
 
 //アクション
-void ObjMeteoFallLR::Action()
+void ObjMeteoFallS::Action()
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -59,18 +55,9 @@ void ObjMeteoFallLR::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + 10 + block->GetScroll(), m_py + 8);
 
-	m_time++;//1加算
-
-	if (m_time > 100)//時間になったら隕石を出力
-	{
-		m_time = 0;
-		ObjMeteoFallL* mtof = new ObjMeteoFallL(m_x,m_y);
-		Objs::InsertObj(mtof, OBJ_METEOFALLL, 17);
-	}
 
 
-
-	if (hx > m_px - 440)
+	if (hx > m_px - 220)
 	{
 		Fall_f = true;
 	}
@@ -82,12 +69,8 @@ void ObjMeteoFallLR::Action()
 			;
 		}
 
-		m_speed_power_y = +0.0f;  //隕石落下速度y
-		m_speed_power_x = -0.0f;	 //通常速度
-
-
-
-		
+		m_speed_power_y = +0.5f;  //隕石落下速度y
+		m_speed_power_x = -0.1f;	 //通常速度
 
 		//ブロック衝突で向き変更
 		if (m_hit_up == true)
@@ -130,6 +113,18 @@ void ObjMeteoFallLR::Action()
 		&m_block_type
 	);
 
+	if (m_speed_power_y >= 1.0f)
+	{
+		m_speed_power_y += -0.1f;
+		m_speed_power_y += 0.1f;
+	}
+
+	if (m_speed_power_y <= 1.0f)
+	{
+		m_speed_power_y += 1.0f;
+		m_speed_power_y += -0.1f;
+	}
+
 	//位置の更新
 	m_px += m_vx;
 	m_py += m_vy;
@@ -142,7 +137,7 @@ void ObjMeteoFallLR::Action()
 	}
 }
 //ドロー
-void ObjMeteoFallLR::Draw()
+void ObjMeteoFallS::Draw()
 {
 	//描写カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
@@ -153,16 +148,16 @@ void ObjMeteoFallLR::Draw()
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 192.0f;
-	src.m_bottom = 192.0f;
+	src.m_right = 64.0f;
+	src.m_bottom = 64.0f;
 
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 	//表示位置の設定
 	dst.m_top = 0.0f + m_py;
 	dst.m_left = 0.0f + m_px + block->GetScroll();
-	dst.m_right = 100.0f + m_px + block->GetScroll();
-	dst.m_bottom = 100.0f + m_py;
+	dst.m_right = 32.0f + m_px + block->GetScroll();
+	dst.m_bottom = 32.0f + m_py;
 
-	Draw::Draw(9, &src, &dst, c, 0.0f);
+	Draw::Draw(8, &src, &dst, c, 0.0f);
 
 }

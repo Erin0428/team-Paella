@@ -29,6 +29,11 @@ public:
 		float*vx, float*vy, int*bt
 	);
 private:
+
+	int m_ani_time;
+	int m_ani_frame;
+	float m_ani_max_time;
+
 	float m_px;			//位置
 	float m_py;
 	float m_vx;			//移動ベクトル
