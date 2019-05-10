@@ -59,13 +59,16 @@ void ObjMeteoFallLR::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + 10 + block->GetScroll(), m_py + 8);
 
-	m_time++;//1加算
 
-	if (m_time > 100)//時間になったら隕石を出力
+    m_time = 0; // 適当な変数、既にあるなら宣言必要なし
+
+	m_time = rand() % 200;// このように記述するとnpcには０～２までの値が入ります
+
+	if (m_time == 0)//時間になったら隕石を出力
 	{
 		m_time = 0;
-		ObjMeteoFallL* mtof = new ObjMeteoFallL(m_x,m_y);
-		Objs::InsertObj(mtof, OBJ_METEOFALLL, 17);
+		ObjMeteoFallLZ* mtof = new ObjMeteoFallLZ(m_x,m_y);
+		Objs::InsertObj(mtof, OBJ_METEOFALLLZ, 17);
 	}
 
 
@@ -129,6 +132,18 @@ void ObjMeteoFallLR::Action()
 		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
 		&m_block_type
 	);
+
+	if (m_speed_power_y >= 1.0f)
+	{
+		m_speed_power_y += -0.1f;
+		m_speed_power_y += 0.1f;
+	}
+
+	if (m_speed_power_y <= 1.0f)
+	{
+		m_speed_power_y += 1.0f;
+		m_speed_power_y += -0.1f;
+	}
 
 	//位置の更新
 	m_px += m_vx;

@@ -35,7 +35,10 @@
       <UniqueIdentifier>{d4d20cbc-be17-4df9-b885-466cbe8fd5c6}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\ALL METEO">
-      <UniqueIdentifier>{3e732fa1-0ded-41c5-af11-786a7aeb5620}</UniqueIdentifier>
+      <UniqueIdentifier>{8c29218a-26f5-4915-b1fd-d14955dcc8e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Ending">
+      <UniqueIdentifier>{8b373c63-1788-40c5-b360-1e139edf5b40}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -123,12 +126,28 @@
     <ClCompile Include="CObjBullet.cpp">
       <Filter>ソース ファイル\ObjHero</Filter>
     </ClCompile>
+    <ClCompile Include="ObjMeteoFallL.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallLR.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallLZ.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallS.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallSR.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallSZ.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
     <ClCompile Include="ObjMeteo.cpp">
       <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMeteoFall.cpp">
-      <Filter>ソース ファイル\ALL METEO</Filter>
-    </ClCompile>
+
     <ClCompile Include="ObjMeteoFallLR.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
@@ -138,14 +157,21 @@
     <ClCompile Include="ObjMeteoFallL.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneEnding.cpp">
+      <Filter>ソース ファイル\Ending</Filter>
+    <ClCompile Include="ObjMeteo2.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnding.cpp">
+      <Filter>ソース ファイル\Ending</Filter>
     <ClCompile Include="ObjMeteoFall.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMeteoFallLR.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="ObjMeteoFallR.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMeteoFallS.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="ObjMeteoFallZ.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +259,30 @@
     <ClInclude Include="CObjBullet.h">
       <Filter>ソース ファイル\ObjHero</Filter>
     </ClInclude>
+    <ClInclude Include="ObjMeteoFallL.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallLR.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallLZ.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallS.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallSR.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallSZ.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteo.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBullet.h">
+      <Filter>ソース ファイル\ObjHero</Filter>
+    </ClInclude>
     <ClInclude Include="ObjMeteo.h">
       <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
@@ -247,18 +297,19 @@
     </ClInclude>
     <ClInclude Include="ObjMeteoFallS.h">
       <Filter>ソース ファイル\Scene</Filter>
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMeteoFall.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="ObjMeteoFallR.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    <ClInclude Include="SceneEnding.h">
+      <Filter>ソース ファイル\Ending</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMeteoFallL.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMeteoFallLR.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMeteoFallS.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="ObjEnding.h">
+      <Filter>ソース ファイル\Ending</Filter>
+    <ClInclude Include="ObjMeteo2.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    <ClInclude Include="ObjMeteoFallZ.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

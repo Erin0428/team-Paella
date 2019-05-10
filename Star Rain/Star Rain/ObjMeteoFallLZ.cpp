@@ -5,19 +5,19 @@
 #include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
-#include"ObjMeteoFallL.h"
+#include"ObjMeteoFallLZ.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-ObjMeteoFallL::ObjMeteoFallL(float x, float y)
+ObjMeteoFallLZ::ObjMeteoFallLZ(float x, float y)
 {
 	m_px = x;
 	m_py = y;
 }
 
 //イニシャライズ
-void ObjMeteoFallL::Init()
+void ObjMeteoFallLZ::Init()
 {
 	m_speed_power_y = 1.3f;	//通常速度
 	m_speed_power_x = 1.3f;	//通常速度
@@ -42,7 +42,7 @@ void ObjMeteoFallL::Init()
 }
 
 //アクション
-void ObjMeteoFallL::Action()
+void ObjMeteoFallLZ::Action()
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -57,87 +57,77 @@ void ObjMeteoFallL::Action()
 
 
 
-	if (hx > m_px - 440)
+
+
+	m_speed_power_y = +0.05f;  //隕石落下速度y
+	m_speed_power_x = -0.01f;	 //通常速度
+
+	//ブロック衝突で向き変更
+	if (m_hit_up == true)
 	{
-		Fall_f = true;
+		m_move = false;
 	}
-	if (Fall_f == true)
-	{
-		//落下
-		if (m_py > 1000.0f)
-		{
-			;
-		}
-
-		m_speed_power_y = +0.05f;  //隕石落下速度y
-		m_speed_power_x = -0.01f;	 //通常速度
-
-		//ブロック衝突で向き変更
-		if (m_hit_up == true)
-		{
-			m_move = false;
-		}
-		if (m_hit_down == true)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}
-		if (m_hit_left == true)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}
-		if (m_hit_right == true)
-		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
-		}
-
-		//方向
-		if (m_move == false)
-		{
-			m_vy += m_speed_power_y;
-			m_vx += m_speed_power_x;
-		}
-	}
-
-
-
-	//ブロックタイプ検知用の変数がないためのダミー
-	//int d;
-
-	//ブロックとの当たり判定実行
-	CObjBlock* pd = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	pd->BlockHit(&m_px, &m_py, false,
-		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
-		&m_block_type
-	);
-
-	if (m_speed_power_y >= 1.0f)
-	{
-		m_speed_power_y += -0.1f;
-		m_speed_power_y += 0.1f;
-	}
-
-	if (m_speed_power_y <= 1.0f)
-	{
-		m_speed_power_y += 1.0f;
-		m_speed_power_y += -0.1f;
-	}
-
-	//位置の更新
-	m_px += m_vx;
-	m_py += m_vy;
-
-	//ブロックに当たっているか
-	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
+	if (m_hit_down == true)
 	{
 		this->SetStatus(false);
 		Hits::DeleteHitBox(this);
 	}
+	if (m_hit_left == true)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+	if (m_hit_right == true)
+	{
+		this->SetStatus(false);
+		Hits::DeleteHitBox(this);
+	}
+
+	//方向
+	if (m_move == false)
+	{
+		m_vy += m_speed_power_y;
+		m_vx += m_speed_power_x;
+
+
+
+
+		//ブロックタイプ検知用の変数がないためのダミー
+		//int d;
+
+		//ブロックとの当たり判定実行
+		CObjBlock* pd = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+		pd->BlockHit(&m_px, &m_py, false,
+			&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+			&m_block_type
+		);
+
+		if (m_speed_power_y >= 1.0f)
+		{
+			m_speed_power_y += -0.1f;
+			m_speed_power_y += 0.1f;
+		}
+
+		if (m_speed_power_y <= 1.0f)
+		{
+			m_speed_power_y += 1.0f;
+			m_speed_power_y += -0.1f;
+		}
+
+		//位置の更新
+		m_px += m_vx;
+		m_py += m_vy;
+
+		//ブロックに当たっているか
+		if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
+	}
 }
 //ドロー
-void ObjMeteoFallL::Draw()
+void ObjMeteoFallLZ::Draw()
 {
 	//描写カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
