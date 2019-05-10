@@ -11,6 +11,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+
 CObjBlock::CObjBlock(int map[19][120])
 {
 	//マップデータコピー
