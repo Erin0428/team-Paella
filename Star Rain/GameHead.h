@@ -45,6 +45,7 @@ enum HIT_ELEMENTS
 	ELEMENT_WHITE,
 	ELEMENT_BULLET,
 	ELEMENT_BLOCK,
+	ELEMENT_BULLET,
 
 };
 //------------------------------------------------

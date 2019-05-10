@@ -70,22 +70,22 @@ void CObjHero::Action()
 	m_speed_power = 0.3f;
 
 
-	////主人公機の弾丸発射
-	//if (Input::GetVKey('Z') == true)
-	//{
-	//	if (m_f == true)
-	//	{
-	//		//弾丸オブジェクト作成
-	//		CObjBullet* obj_b = new CObjBullet(g_px + 30.0f, g_py + 15.0f);
-	//		Objs::InsertObj(obj_b, OBJ_BULLET, 14);
+	//主人公機の弾丸発射
+	if (Input::GetVKey('Z') == true)
+	{
+		if (m_f == true)
+		{
+			//弾丸オブジェクト作成
+			CObjBullet* obj_b = new CObjBullet(g_px + 30.0f, g_py + 15.0f);
+			Objs::InsertObj(obj_b, OBJ_BULLET, 14);
 
-	//		m_f = false;
-	//	}
-	//}
-	//else
-	//{
-	//	m_f = true;
-	//}
+			m_f = false;
+		}
+	}
+	else
+	{
+		m_f = true;
+	}
 
 	//ジャンプ
 	if (Input::GetVKey(VK_SPACE) == true)
@@ -140,11 +140,6 @@ void CObjHero::Action()
 		}
 		if (m_hit_down == true && g_map_chenge == 1)
 		{
-			m_vy = -8;
-			g_py += m_vy;
-		}
-		if (m_hit_down == true && g_map_chenge == 1)
-		{
 			m_vy = -7;
 			g_py + m_vy;
 		}
@@ -159,22 +154,6 @@ void CObjHero::Action()
 		m_time--;
 		if (m_time <= 0) {
 			m_time = 0;
-		}
-	}
-
-	//ジャンプ
-	if (Input::GetVKey(VK_UP) == true)
-	{
-		if (m_hit_down == true && m_time == 0)
-		{
-			m_vy = -7;
-			g_py += m_vy;
-
-			if (m_hit_down == true && m_time == 0 && g_map_chenge == 1)
-			{
-				m_vy = -5;
-				g_py + m_vy;
-			}
 		}
 	}
 
@@ -259,7 +238,7 @@ void CObjHero::Action()
 	m_vy += 2.0 / (16.0f); //初期値　m_vx+=3.0/(16.0f);
 
 	//摩擦
-	m_vx += -(m_vx*0.050);
+	m_vx += -(m_vx*0.098);
 
 	//ブロックとの当たり判定実行
 	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);

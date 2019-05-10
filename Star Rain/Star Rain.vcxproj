@@ -40,7 +40,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -111,7 +111,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CObjBullet.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GameL\Audio.cpp" />
     <ClCompile Include="GameL\DirectXDevice.cpp" />
@@ -135,14 +135,20 @@
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMeteo.cpp" />
     <ClCompile Include="ObjMeteoFall.cpp" />
+    <ClCompile Include="ObjMeteoFallL.cpp" />
     <ClCompile Include="ObjMeteoFallLR.cpp" />
+    <ClCompile Include="ObjMeteoFallLZ.cpp" />
+    <ClCompile Include="ObjMeteoFallR.cpp" />
     <ClCompile Include="ObjMeteoFallS.cpp" />
+    <ClCompile Include="ObjMeteoFallSR.cpp" />
+    <ClCompile Include="ObjMeteoFallSZ.cpp" />
+    <ClCompile Include="ObjMeteoFallZ.cpp" />
+    <ClCompile Include="ObjMeteoFallS.cpp" />
+    <ClCompile Include="ObjMeteo2.cpp" />
     <ClCompile Include="ObjMeteoFall.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ObjMeteoFallL.cpp" />
-    <ClCompile Include="ObjMeteoFallLR.cpp" />
-    <ClCompile Include="ObjMeteoFallS.cpp" />
     <ClCompile Include="ObjOver.cpp" />
     <ClCompile Include="ObjTime.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -157,7 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjBullet.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="GameHead.h" />
     <ClInclude Include="GameL\Audio.h" />
@@ -184,7 +190,16 @@
     <ClInclude Include="ObjMeteoFall.h" />
     <ClInclude Include="ObjMeteoFallL.h" />
     <ClInclude Include="ObjMeteoFallLR.h" />
+    <ClInclude Include="ObjMeteoFallLZ.h" />
+    <ClInclude Include="ObjMeteoFallR.h" />
     <ClInclude Include="ObjMeteoFallS.h" />
+    <ClInclude Include="ObjMeteoFallSR.h" />
+    <ClInclude Include="ObjMeteoFallSZ.h" />
+    <ClInclude Include="ObjMeteoFallZ.h" />
+    <ClInclude Include="ObjMeteoFallL.h" />
+    <ClInclude Include="ObjMeteoFallLR.h" />
+    <ClInclude Include="ObjMeteoFallS.h" />
+    <ClInclude Include="ObjMeteo2.h" />
     <ClInclude Include="ObjMeteoFall.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
