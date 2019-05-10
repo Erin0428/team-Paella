@@ -8,12 +8,12 @@ extern float g_px;
 extern float g_py;
 
 //オブジェクト : ゴールブロック
-class ObjMeteoFallLR : public CObj
+class ObjMeteoFallSZ : public CObj
 {
 #define ALL_BLOCK_SIZE (32.0f)
 public:
-	ObjMeteoFallLR(float x, float y);
-	~ObjMeteoFallLR() {};
+	ObjMeteoFallSZ(float x, float y);
+	~ObjMeteoFallSZ() {};
 	void Init();   //イ二シャライズ
 	void Action();	//アクション
 	void Draw();    //ドロー
@@ -34,11 +34,6 @@ private:
 	int  d;
 	int  m_block_type;
 
-	int m_x;
-	int m_y;
-
-	int m_time; //隕石発射カウント
-
 	float m_scroll;     //左右スクロール用
 	float m_vx;			//移動ベクトル
 	float m_vy;
@@ -51,6 +46,4 @@ private:
 	bool abc;
 	//移動の向き制御用
 	bool m_move;
-
-	int time;
-};
+}; 

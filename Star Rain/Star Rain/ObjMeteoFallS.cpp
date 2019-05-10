@@ -57,7 +57,7 @@ void ObjMeteoFallS::Action()
 
 
 
-	if (hx > m_px - 220)
+	if (hx > m_px - 400)
 	{
 		Fall_f = true;
 	}
@@ -70,7 +70,7 @@ void ObjMeteoFallS::Action()
 		}
 
 		m_speed_power_y = +0.5f;  //隕石落下速度y
-		m_speed_power_x = -0.3f;	 //通常速度
+		m_speed_power_x = -0.1f;	 //通常速度
 
 		//ブロック衝突で向き変更
 		if (m_hit_up == true)

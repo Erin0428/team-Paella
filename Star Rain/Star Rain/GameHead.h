@@ -21,6 +21,14 @@ enum OBJ_NAME
 	OBJ_METEOFALLL,
 	OBJ_METEOFALLLR,
 	OBJ_METEO,
+	OBJ_METEOFALLS,
+	OBJ_METEOFALLL,
+	OBJ_METEOFALLLR,
+	OBJ_METEOFALLLZ,
+	OBJ_METEOFALLSR,
+	OBJ_METEOFALLSZ,
+	OBJ_METEOFALLR,
+	OBJ_METEOFALLZ,
 	OBJ_BULLET,
 	OBJ_METEO2,
 	OBJ_ENDING,
@@ -46,6 +54,7 @@ enum HIT_ELEMENTS
 	ELEMENT_WHITE,
 	ELEMENT_BULLET,
 	ELEMENT_BLOCK,
+	ELEMENT_BULLET,
 
 };
 //------------------------------------------------
@@ -89,6 +98,12 @@ extern bool g_f;
 //#include"CObjBullet.h"
 #include"ObjMeteoFallS.h"
 #include"ObjMeteoFallL.h"
+#include"ObjMeteoFallLR.h"
+#include"ObjMeteoFallLZ.h"
+#include"ObjMeteoFallSR.h"
+#include"ObjMeteoFallSZ.h"
+#include"ObjMeteoFallZ.h"
+#include"ObjMeteoFallR.h"
 #include"ObjMeteoFallLR.h"
 #include"ObjEnding.h"
 #include"ObjMeteo2.h"

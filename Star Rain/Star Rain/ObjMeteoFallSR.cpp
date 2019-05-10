@@ -5,24 +5,28 @@
 #include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
-#include"ObjMeteoFallS.h"
+#include"ObjMeteoFallSR.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-ObjMeteoFallS::ObjMeteoFallS(float x, float y)
+ObjMeteoFallSR::ObjMeteoFallSR(float x, float y)
 {
 	m_px = x;
 	m_py = y;
+	m_x = x;
+	m_y = y;
 }
 
 //イニシャライズ
-void ObjMeteoFallS::Init()
+void ObjMeteoFallSR::Init()
 {
 	m_speed_power_y = 1.3f;	//通常速度
 	m_speed_power_x = 1.3f;	//通常速度
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+
+	m_time = 0;
 
 	m_move = false;			//true=上 false=下
 
@@ -36,13 +40,13 @@ void ObjMeteoFallS::Init()
 	m_hit_left = false;
 	m_hit_right = false;
 
-	//当たり判定用のHitBoxを作成
+	//確認用のHitBoxを作成
 	Hits::SetHitBox(this, m_px, m_py, 16, 16, ELEMENT_ENEMY, OBJ_METEOFALL, 1);
 
 }
 
 //アクション
-void ObjMeteoFallS::Action()
+void ObjMeteoFallSR::Action()
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -55,9 +59,18 @@ void ObjMeteoFallS::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + 10 + block->GetScroll(), m_py + 8);
 
+	m_time++;//1加算
+
+	if (m_time > 130)//時間になったら隕石を出力
+	{
+		m_time = 0;
+		ObjMeteoFallSZ* mtof = new ObjMeteoFallSZ(m_x, m_y);
+		Objs::InsertObj(mtof, OBJ_METEOFALLSZ, 17);
+	}
 
 
-	if (hx > m_px - 220)
+
+	if (hx > m_px - 440)
 	{
 		Fall_f = true;
 	}
@@ -69,8 +82,12 @@ void ObjMeteoFallS::Action()
 			;
 		}
 
-		m_speed_power_y = +0.5f;  //隕石落下速度y
-		m_speed_power_x = -0.1f;	 //通常速度
+		m_speed_power_y = +0.0f;  //隕石落下速度y
+		m_speed_power_x = -0.0f;	 //通常速度
+
+
+
+
 
 		//ブロック衝突で向き変更
 		if (m_hit_up == true)
@@ -137,7 +154,7 @@ void ObjMeteoFallS::Action()
 	}
 }
 //ドロー
-void ObjMeteoFallS::Draw()
+void ObjMeteoFallSR::Draw()
 {
 	//描写カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };

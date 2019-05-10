@@ -143,6 +143,7 @@
     <ClCompile Include="ObjMeteoFallL.cpp" />
     <ClCompile Include="ObjMeteoFallLR.cpp" />
     <ClCompile Include="ObjMeteoFallS.cpp" />
+    <ClCompile Include="ObjMeteotyu.cpp" />
     <ClCompile Include="ObjOP.cpp" />
     <ClCompile Include="ObjOver.cpp" />
     <ClCompile Include="Objsmallmeteo.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="ObjMeteoFallL.h" />
     <ClInclude Include="ObjMeteoFallLR.h" />
     <ClInclude Include="ObjMeteoFallS.h" />
+    <ClInclude Include="ObjMeteotyu.h" />
     <ClInclude Include="ObjOP.h" />
     <ClInclude Include="ObjOver.h" />
     <ClInclude Include="Objsmallmeteo.h" />

@@ -49,7 +49,7 @@ void ObjMeteoFall::Action()
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	//主人公の位置を取得
+	//主人公の位置を取得3
 	CObjHero*hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	float hx = hero->GetPOSX();
 	float hy = hero->GetPOSY();
