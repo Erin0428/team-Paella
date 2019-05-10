@@ -25,4 +25,6 @@ private:
 	bool m_andf;
 	bool m_gazo;
 	bool m_kesu;
+	bool m_key_flag; //キーフラグ
+	int choose;
 };
