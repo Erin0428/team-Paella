@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\ObjBack">
+      <UniqueIdentifier>{7fd00098-516c-48a4-8439-6a0f6f6f9b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Block">
+      <UniqueIdentifier>{07952882-0c61-40c1-9d3a-1e0744d8370e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameClear">
+      <UniqueIdentifier>{144cdd3b-25d3-4b6d-9b99-be423f2777ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ObjHero">
+      <UniqueIdentifier>{11a2b425-c34e-4893-84be-2da37ae3b165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameOver">
+      <UniqueIdentifier>{96039d92-e479-4ec7-9beb-8d55b80ef116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameTitle">
+      <UniqueIdentifier>{87415346-a177-41e5-b27f-44a6f5976f5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{d4d20cbc-be17-4df9-b885-466cbe8fd5c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ALL METEO">
+      <UniqueIdentifier>{3e732fa1-0ded-41c5-af11-786a7aeb5620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Ending">
+      <UniqueIdentifier>{8b373c63-1788-40c5-b360-1e139edf5b40}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\Audio.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\DirectXDevice.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\Draw2DTex_Source.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\DrawFont.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\GameL_Main.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\HitBoxManager.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\MultiThread.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SceneManager.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SceneObjManager.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SetWindow.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\UserData.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\WICTextureLoader.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\WinInputs.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTime.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソース ファイル\ObjBack</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBlock.cpp">
+      <Filter>ソース ファイル\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneClear.cpp">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClCompile>
+    <ClCompile Include="Objgoalblock.cpp">
+      <Filter>ソース ファイル\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソース ファイル\ObjHero</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOver.cpp">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOver.cpp">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMain.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\DrawTexture.cpp">
+      <Filter>リソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjBullet.cpp">
+      <Filter>ソース ファイル\ObjHero</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteo.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFall.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallLR.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallS.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallL.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEnding.cpp">
+      <Filter>ソース ファイル\Ending</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEnding.cpp">
+      <Filter>ソース ファイル\Ending</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameHead.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\Audio.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\DirectXDevice.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\DirectXTex.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\DrawFont.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\HitBoxManager.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\MultiThread.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SceneManager.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SceneObjManager.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SetWindow.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\UserData.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\WICTextureLoader.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\WinInputs.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTime.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <Filter>ソース ファイル\ObjBack</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBlock.h">
+      <Filter>ソース ファイル\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneClear.h">
+      <Filter>ソース ファイル\GameClear</Filter>
+    </ClInclude>
+    <ClInclude Include="Objgoalblock.h">
+      <Filter>ソース ファイル\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ソース ファイル\ObjHero</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjOver.h">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOver.h">
+      <Filter>ソース ファイル\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\GameTitle</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMain.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\DrawTexture.h">
+      <Filter>リソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjBullet.h">
+      <Filter>ソース ファイル\ObjHero</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteo.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFall.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallL.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallLR.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallS.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEnding.h">
+      <Filter>ソース ファイル\Ending</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEnding.h">
+      <Filter>ソース ファイル\Ending</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GameL\DirectXTex.inl">
+      <Filter>リソース ファイル</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="GameL\DirectXTex.lib">
+      <Filter>リソース ファイル</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
