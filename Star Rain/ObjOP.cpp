@@ -27,6 +27,7 @@ void CObjOP::Init()
 	m_cnt = 1;
 	m_gazo = false;
 	m_flag = true;
+	m_time = 30;
 }
 
 //アクション
@@ -76,6 +77,8 @@ void CObjOP::Action()
 	{
 	
 	}
+
+	m_time--;
 }
 
 //ドロー
@@ -106,37 +109,45 @@ void CObjOP::Draw()
 	//swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	//Font::StrDraw(str, 20, 20, 12, c);
 	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 565 && m_mou_x < 750 && m_mou_y>540 && m_mou_y < 570)
-	{
-		Font::StrDraw(L"◇脱出を試みる", 570, 550, 32, c);
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_l == true)
-		{
-			if (m_flag == true)
-			{
-				m_kesu = true;
-				//Audio::Start(2);
+	//if (m_mou_x > 565 && m_mou_x < 750 && m_mou_y>540 && m_mou_y < 570)
+	//{
+	//	Font::StrDraw(L"◇脱出を試みる", 570, 550, 32, c);
+	//	//マウスのボタンが押されたらメインに遷移
+	//	if (m_mou_l == true)
+	//	{
+	//		if (m_flag == true)
+	//		{
+	//			m_kesu = true;
+	//			//Audio::Start(2);
 
-				m_flag = false;
-			}
-		}
-		else
-		{
-			m_flag = true;
-		}
-	}
-	else
+	//			m_flag = false;
+	//		}
+	//	}
+	//	else
+	//	{
+	//		m_flag = true;
+	//	}
+	//}
+	//else
+	//{
+	//	Font::StrDraw(L"脱出を試みる", 570, 550, 32, c);
+	//}
+	//if (m_kesu == true)
+	//{
+	//	m_and -= 0.02f;
+	//	if (m_and <= 0)
+	//	{
+	//		Scene::SetScene(new CSceneMain());
+	//	}
+	//}
+
+	Font::StrDraw(L"◇脱出を試みる", 570, 550, 32, c);
+	if (m_time <= 0)
 	{
-		Font::StrDraw(L"脱出を試みる", 570, 550, 32, c);
-	}
-	if (m_kesu == true)
-	{
-		m_and -= 0.02f;
-		if (m_and <= 0)
-		{
+		if (Input::GetVKey(VK_RETURN) == true)
 			Scene::SetScene(new CSceneMain());
-		}
 	}
+
 	if (m_cnt == 1)
 	{
 		

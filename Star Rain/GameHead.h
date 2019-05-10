@@ -86,7 +86,7 @@ extern bool g_f;
 #include"Objgoalblock.h"
 #include"ObjMeteoFall.h"
 #include"ObjMeteo.h"
-//#include"CObjBullet.h"
+#include"CObjBullet.h"
 #include"ObjMeteoFallS.h"
 #include"ObjMeteoFallL.h"
 #include"ObjMeteoFallLR.h"

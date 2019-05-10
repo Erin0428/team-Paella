@@ -25,4 +25,5 @@ private:
 	bool m_andf;
 	bool m_gazo;
 	bool m_kesu;
+	int m_time;
 };

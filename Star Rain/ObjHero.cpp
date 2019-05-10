@@ -43,7 +43,7 @@ void CObjHero::Init()
 	m_speed_power = 0.5f;//通常速度
 	m_ani_max_time = 4;  //アニメーション間隔幅
 
-	m_time = 31;
+	m_time = 0;
 
 	hit_size = 0;
 	hit_size_x = 0;
@@ -70,22 +70,33 @@ void CObjHero::Action()
 	m_speed_power = 0.3f;
 
 
-	////主人公機の弾丸発射
-	//if (Input::GetVKey('Z') == true)
-	//{
-	//	if (m_f == true)
-	//	{
-	//		//弾丸オブジェクト作成
-	//		CObjBullet* obj_b = new CObjBullet(g_px + 30.0f, g_py + 15.0f);
-	//		Objs::InsertObj(obj_b, OBJ_BULLET, 14);
+	//主人公機の弾丸発射
+	if (Input::GetVKey('Z') == true)
+	{
+		//if (m_f == true)
+		//{
+		//	//弾丸オブジェクト作成
+		//	CObjBullet* obj_b = new CObjBullet(g_px + 20, g_py);
+		//	Objs::InsertObj(obj_b, OBJ_BULLET, 14);
 
-	//		m_f = false;
-	//	}
-	//}
-	//else
-	//{
-	//	m_f = true;
-	//}
+		//	if (m_cnt == 1) 
+		//	{
+		//		m_f = false;
+		//	}
+		//}
+		if (m_time <= 0)
+		{
+			CObjBullet* obj_b = new CObjBullet(g_px + 20, g_py);
+			Objs::InsertObj(obj_b, OBJ_BULLET, 14);
+
+			m_time = 30;
+			m_f = false;
+		}
+	}
+	else
+	{
+		m_f = true;
+	}
 
 	//ジャンプ
 	if (Input::GetVKey(VK_SPACE) == true)
@@ -155,22 +166,16 @@ void CObjHero::Action()
 		}
 
 	}
-	if (m_time > 0) {
-		m_time--;
-		if (m_time <= 0) {
-			m_time = 0;
-		}
-	}
 
 	//ジャンプ
 	if (Input::GetVKey(VK_UP) == true)
 	{
-		if (m_hit_down == true && m_time == 0)
+		if (m_hit_down == true )
 		{
 			m_vy = -7;
 			g_py += m_vy;
 
-			if (m_hit_down == true && m_time == 0 && g_map_chenge == 1)
+			if (m_hit_down == true && g_map_chenge == 1)
 			{
 				m_vy = -5;
 				g_py + m_vy;
@@ -417,6 +422,10 @@ void CObjHero::Action()
 		g_px = 64.0f;
 		g_py = 500.0f;
 	}
+
+	if (m_time >= 0)
+		m_time--;
+
 }
 
 //ドロー
