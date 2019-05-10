@@ -114,6 +114,7 @@ void CObjHero::Action()
 		{
 			m_vy = -8;
 			g_py += m_vy;
+			
 		}
 		if (m_hit_down == true && g_map_chenge == 1)
 		{

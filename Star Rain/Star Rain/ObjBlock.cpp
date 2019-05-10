@@ -64,7 +64,7 @@ void CObjBlock::Action()
 			if (m_map[i][j] == 2)
 			{
 				ObjMeteo* mto = new ObjMeteo(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
-				Objs::InsertObj(mto, OBJ_METEO, 14);
+				Objs::InsertObj(mto, OBJ_METEO, 9);
 				m_map[i][j] = 0;
 			}
 			else if (m_map[i][j] == 3)
@@ -77,6 +77,18 @@ void CObjBlock::Action()
 			{
 				CObjgoalblock* ends = new CObjgoalblock(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
 				Objs::InsertObj(ends, OBJ_GOAL_BLOCK, 11);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 7)
+			{
+				ObjMeteoFallS* mtof = new ObjMeteoFallS(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLS, 17);
+				m_map[i][j] = 0;
+			}
+			else if (m_map[i][j] == 8)
+			{
+				ObjMeteoFallLR* mtof = new ObjMeteoFallLR(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(mtof, OBJ_METEOFALLLR, 17);
 				m_map[i][j] = 0;
 			}
 		}
@@ -192,11 +204,12 @@ void CObjBlock::BlockHit(
 
 				//オブジェクトとブロックの当たり判定
 				if ((*x + (-scroll) + 50.0f > bx) && (*x + (-scroll) < bx + 16.0f) && (*y + 64.0f > by) && (*y < by + 32.0f))
+			//	if ((hx + (-m_scroll) + 64.0f > x) && (hx + (hx + (-m_scroll) < x + 64.0f) && (hy + 64.0f > y) && (hy < y + 64.0f))
 				{
 					//上下左右判定
-
+				
 					//vectorの作成
-					float rvx = (*x + (-scroll)) - bx;
+					float rvx = (*x + (-m_scroll)) - bx;
 					float rvy = *y - by;
 
 					//長さを求める
@@ -252,6 +265,7 @@ void CObjBlock::BlockHit(
 							{
 								*vy = 0.0f;
 							}
+							
 						}
 					}
 				}

@@ -49,7 +49,7 @@ void CSceneMain::InitScene()
 		if (g_map_chenge == 2)
 			p = Save::ExternalDataOpen(L"map3.csv", &size);//外部データ読み込み
 
-	int map[19][120];
+	int map[21][120];
 	int count = 1;
 	for (int i = 0; i < 19; i++)
 	{
@@ -96,6 +96,8 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"goal.png", 5, TEX_SIZE_64);
 	Draw::LoadImage(L"設置型隕石ー改.png", 4, TEX_SIZE_768);
 	Draw::LoadImage(L"設置型隕石２改.png", 6, TEX_SIZE_768);
+	Draw::LoadImage(L"隕石小.png", 8, TEX_SIZE_64);
+	Draw::LoadImage(L"隕石　大.png", 9, TEX_SIZE_64);
 
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
@@ -109,6 +111,24 @@ void CSceneMain::InitScene()
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 9);
 
+	//音楽読み込みメゾット
+	if (g_map_chenge == 0)
+	{
+		Audio::LoadAudio(0, L"map1.wav", BACK_MUSIC);		//階層1 音楽読み込み
+		float f = Audio::VolumeMaster(1.5);					//BGMの音量変更
+	}
+	else if (g_map_chenge == 1)
+	{
+		Audio::LoadAudio(0, L"map2.wav", BACK_MUSIC);		//階層2 音楽読み込み
+		float v = Audio::VolumeMaster(1.5);					//BGMの音量変更
+	}
+	else if (g_map_chenge == 2)
+	{
+		Audio::LoadAudio(0, L"map3.wav", BACK_MUSIC);		//階層3 音楽読み込み
+		float v = Audio::VolumeMaster(1.5);					//BGMの音量変更
+	}
+
+	Audio::Start(0);                             //音楽スタート
 	////隕石オブジェクト作成
 	//ObjMeteo*objm = new ObjMeteo();
 	//Objs::InsertObj(objm, OBJ_METEO, 10);

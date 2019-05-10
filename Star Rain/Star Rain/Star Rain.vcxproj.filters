@@ -39,9 +39,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="GameL\Audio.cpp">
       <Filter>リソース ファイル</Filter>
     </ClCompile>
@@ -127,6 +124,18 @@
       <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
     <ClCompile Include="ObjMeteoFall.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallLcpp.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallLR.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallLZ.cpp">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMeteoFallS.cpp">
       <Filter>ソース ファイル\ALL METEO</Filter>
     </ClCompile>
   </ItemGroup>
@@ -219,6 +228,15 @@
       <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
     <ClInclude Include="ObjMeteoFall.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallLR.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallLZ.h">
+      <Filter>ソース ファイル\ALL METEO</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMeteoFallS.h">
       <Filter>ソース ファイル\ALL METEO</Filter>
     </ClInclude>
   </ItemGroup>
