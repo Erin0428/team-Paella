@@ -105,6 +105,7 @@ void CSceneMain::InitScene()
 	Draw::LoadImage(L"隕石　大.png", 9, TEX_SIZE_64);
 	Draw::LoadImage(L"隕石改改.png", 4, TEX_SIZE_64);
 	Draw::LoadImage(L"小隕石.png", 12, TEX_SIZE_64);
+	Draw::LoadImage(L"隕石 中.png", 13, TEX_SIZE_768);
 	
 
 	//主人公オブジェクト作成

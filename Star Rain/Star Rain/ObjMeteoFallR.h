@@ -8,12 +8,12 @@ extern float g_px;
 extern float g_py;
 
 //オブジェクト : ゴールブロック
-class ObjMeteoFallLR : public CObj
+class ObjMeteoFallR : public CObj
 {
 #define ALL_BLOCK_SIZE (32.0f)
 public:
-	ObjMeteoFallLR(float x, float y);
-	~ObjMeteoFallLR() {};
+	ObjMeteoFallR(float x, float y);
+	~ObjMeteoFallR() {};
 	void Init();   //イ二シャライズ
 	void Action();	//アクション
 	void Draw();    //ドロー

@@ -21,7 +21,6 @@ ObjMeteoFallLR::ObjMeteoFallLR(float x, float y)
 //イニシャライズ
 void ObjMeteoFallLR::Init()
 {
-
 	m_speed_power_y = 1.3f;	//通常速度
 	m_speed_power_x = 1.3f;	//通常速度
 	m_vx = 0.0f;
@@ -48,7 +47,6 @@ void ObjMeteoFallLR::Init()
 
 //アクション
 void ObjMeteoFallLR::Action()
-
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -61,13 +59,16 @@ void ObjMeteoFallLR::Action()
 	CHitBox* hit = Hits::GetHitBox(this);
 	hit->SetPos(m_px + 10 + block->GetScroll(), m_py + 8);
 
-	m_time++;//1加算
 
-	if (m_time > 100)//時間になったら隕石を出力
+    m_time = 0; // 適当な変数、既にあるなら宣言必要なし
+
+	m_time = rand() % 200;// このように記述するとnpcには０～２までの値が入ります
+
+	if (m_time == 0)//時間になったら隕石を出力
 	{
 		m_time = 0;
-		ObjMeteoFallL* mtof = new ObjMeteoFallL(m_x,m_y);
-		Objs::InsertObj(mtof, OBJ_METEOFALLL, 17);
+		ObjMeteoFallLZ* mtof = new ObjMeteoFallLZ(m_x,m_y);
+		Objs::InsertObj(mtof, OBJ_METEOFALLLZ, 17);
 	}
 
 

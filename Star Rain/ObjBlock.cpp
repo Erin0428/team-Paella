@@ -98,6 +98,12 @@ void CObjBlock::Action()
 				Objs::InsertObj(smto, OBJ_SMALLMETEO, 12);
 				m_map[i][j] = 0;
 			}
+			else if (m_map[i][j] == 10)
+			{
+				ObjMeteotyu* smto = new ObjMeteotyu(j*ALL_BLOCK_SIZE, i*ALL_BLOCK_SIZE);
+				Objs::InsertObj(smto, OBJ_METEOTYU, 13);
+				m_map[i][j] = 0;
+			}
 		}
 	}
 }

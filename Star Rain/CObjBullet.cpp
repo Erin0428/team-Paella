@@ -29,7 +29,7 @@ void CObjBullet::Init()
 	m_block_type = false;	//踏んでいるブロックの種類
 
 
-	//当たり判定HitoBoxを作成
+	//当たり判定HitBoxを作成
 	Hits::SetHitBox(this, g_px, g_py, 32, 32, ELEMENT_BULLET, OBJ_BULLET, 1);
 
 
@@ -64,41 +64,41 @@ void CObjBullet::Action()
 		Hits::DeleteHitBox(this);
 	}
 	
-	//METEOに当たっているか
-	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
+	////METEOに当たっているか
+	//if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
 
-	//METEOに当たっているか
-	if (hit->CheckObjNameHit(OBJ_METEOFALL) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
+	////METEOに当たっているか
+	//if (hit->CheckObjNameHit(OBJ_METEOFALL) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
 
-	//METEOに当たっているか
-	if (hit->CheckObjNameHit(OBJ_METEO) != nullptr)
-	{
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
-
-
+	////METEOに当たっているか
+	//if (hit->CheckObjNameHit(OBJ_METEO) != nullptr)
+	//{
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
 
 
 
-	//ブロックとの当たり判定実行
-	CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	pb->BlockHit(&g_px, &g_py, false,
-	&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy, &m_block_type);
 
-	//壁に当たったら消える処理
-	if (m_hit == true) {
-		this->SetStatus(false);
-		Hits::DeleteHitBox(this);
-	}
+
+	////ブロックとの当たり判定実行
+	//CObjBlock*pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	//pb->BlockHit(&g_px, &g_py, false,
+	//&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy, &m_block_type);
+
+	////壁に当たったら消える処理
+	//if (m_hit == true) {
+	//	this->SetStatus(false);
+	//	Hits::DeleteHitBox(this);
+	//}
 	
 
 

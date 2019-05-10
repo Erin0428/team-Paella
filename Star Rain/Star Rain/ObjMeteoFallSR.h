@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 //使用するヘッダー
 #include "GameL\SceneObjManager.h"
 //使用するネームスペース
@@ -8,12 +9,12 @@ extern float g_px;
 extern float g_py;
 
 //オブジェクト : ゴールブロック
-class ObjMeteoFallLR : public CObj
+class ObjMeteoFallSR : public CObj
 {
 #define ALL_BLOCK_SIZE (32.0f)
 public:
-	ObjMeteoFallLR(float x, float y);
-	~ObjMeteoFallLR() {};
+	ObjMeteoFallSR(float x, float y);
+	~ObjMeteoFallSR() {};
 	void Init();   //イ二シャライズ
 	void Action();	//アクション
 	void Draw();    //ドロー
@@ -51,6 +52,4 @@ private:
 	bool abc;
 	//移動の向き制御用
 	bool m_move;
-
-	int time;
 };

@@ -5,19 +5,19 @@
 #include"GameL\HitBoxManager.h"
 
 #include"GameHead.h"
-#include"ObjMeteoFall.h"
+#include"ObjMeteotyu.h"
 
 //使用するネームスペース
 using namespace GameL;
 
-ObjMeteoFall::ObjMeteoFall(float x, float y)
+ObjMeteotyu::ObjMeteotyu(float x, float y)
 {
 	m_px = x;
 	m_py = y;
 }
 
 //イニシャライズ
-void ObjMeteoFall::Init()
+void ObjMeteotyu::Init()
 {
 	m_ani_time = 0;
 	m_ani_frame = 0;
@@ -45,18 +45,18 @@ void ObjMeteoFall::Init()
 }
 
 //アクション
-void ObjMeteoFall::Action()
+void ObjMeteotyu::Action()
 {
 	//ブロック情報を持ってくる
 	CObjBlock* block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	//主人公の位置を取得3
+	//主人公の位置を取得
 	CObjHero*hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
 	float hx = hero->GetPOSX();
 	float hy = hero->GetPOSY();
 
 	//HitBoxの位置の変更
 	CHitBox* hit = Hits::GetHitBox(this);
-	hit->SetPos(m_px+10 + block->GetScroll(), m_py+8);
+	hit->SetPos(m_px + 10 + block->GetScroll(), m_py + 8);
 
 	m_ani_time += 1;
 	if (m_ani_time > m_ani_max_time)
@@ -74,7 +74,7 @@ void ObjMeteoFall::Action()
 		Fall_f = true;
 	}
 	if (Fall_f == true)
-	{ 
+	{
 		//落下
 		if (m_py > 1000.0f)
 		{
@@ -84,15 +84,17 @@ void ObjMeteoFall::Action()
 		m_speed_power_y = +0.2f;  //隕石落下速度y
 		m_speed_power_x = -0.1f;	 //通常速度
 
-		//ブロック衝突で向き変更
+									 //ブロック衝突で向き変更
 		if (m_hit_up == true)
 		{
 			m_move = false;
 		}
 		if (m_hit_down == true)
 		{
-			this->SetStatus(false);
-			Hits::DeleteHitBox(this);
+			m_speed_power_y = +0.1f;
+			m_speed_power_x = -0.2f;
+			//this->SetStatus(false);
+			//Hits::DeleteHitBox(this);
 		}
 		if (m_hit_left == true)
 		{
@@ -112,7 +114,7 @@ void ObjMeteoFall::Action()
 			m_vx += m_speed_power_x;
 		}
 	}
-	
+
 
 
 	//ブロックタイプ検知用の変数がないためのダミー
@@ -128,7 +130,7 @@ void ObjMeteoFall::Action()
 	//位置の更新
 	m_px += m_vx;
 	m_py += m_vy;
-	
+
 	//ブロックに当たっているか
 	if (hit->CheckObjNameHit(OBJ_BLOCK) != nullptr)
 	{
@@ -137,7 +139,7 @@ void ObjMeteoFall::Action()
 	}
 }
 //ドロー
-void ObjMeteoFall::Draw()
+void ObjMeteotyu::Draw()
 {
 	int AniData[3] =
 	{
@@ -149,10 +151,10 @@ void ObjMeteoFall::Draw()
 	RECT_F src;//描写元切り取り位置
 	RECT_F dst;//描写先表示位置
 
-	//切り取り位置の設定
+			   //切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 256.0f- AniData[m_ani_frame]*128;
-	src.m_right =384.0f - AniData[m_ani_frame]*128;
+	src.m_left = 256.0f - AniData[m_ani_frame] * 128;
+	src.m_right = 384.0f - AniData[m_ani_frame] * 128;
 	src.m_bottom = 125.0f;
 
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
@@ -162,6 +164,6 @@ void ObjMeteoFall::Draw()
 	dst.m_right = 80.0f + m_px + block->GetScroll();
 	dst.m_bottom = 70.0f + m_py;
 
-	Draw::Draw(7, &src, &dst, c, 0.0f);
+	Draw::Draw(13, &src, &dst, c, 0.0f);
 
 }

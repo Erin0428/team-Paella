@@ -25,6 +25,7 @@ enum OBJ_NAME
 	OBJ_ENDING,
 	OBJ_OP,
 	OBJ_SMALLMETEO,
+	OBJ_METEOTYU,
 };
 //------------------------------------------------
 
@@ -86,13 +87,14 @@ extern bool g_f;
 #include"Objgoalblock.h"
 #include"ObjMeteoFall.h"
 #include"ObjMeteo.h"
-//#include"CObjBullet.h"
+#include"CObjBullet.h"
 #include"ObjMeteoFallS.h"
 #include"ObjMeteoFallL.h"
 #include"ObjMeteoFallLR.h"
 #include"ObjEnding.h"
 #include"ObjOP.h"
 #include"Objsmallmeteo.h"
+#include"ObjMeteotyu.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
