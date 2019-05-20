@@ -41,6 +41,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 //Mainä÷êî
 int APIENTRY wWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR szCmdLine,int nCmdShow)
+
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 

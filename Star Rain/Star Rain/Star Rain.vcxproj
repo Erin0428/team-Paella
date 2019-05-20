@@ -134,6 +134,16 @@
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMeteo.cpp" />
     <ClCompile Include="ObjMeteoFall.cpp" />
+    <ClCompile Include="ObjMeteoFall1.cpp" />
+    <ClCompile Include="ObjMeteoFallL.cpp" />
+    <ClCompile Include="ObjMeteoFallLR.cpp" />
+    <ClCompile Include="ObjMeteoFallLSET.cpp" />
+    <ClCompile Include="ObjMeteoFallLZ.cpp" />
+    <ClCompile Include="ObjMeteoFallR.cpp" />
+    <ClCompile Include="ObjMeteoFallS.cpp" />
+    <ClCompile Include="ObjMeteoFallSR.cpp" />
+    <ClCompile Include="ObjMeteoFallSZ.cpp" />
+    <ClCompile Include="ObjMeteoFallZ.cpp" />
     <ClCompile Include="ObjOver.cpp" />
     <ClCompile Include="ObjTime.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -171,6 +181,16 @@
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMeteo.h" />
     <ClInclude Include="ObjMeteoFall.h" />
+    <ClInclude Include="ObjMeteoFall1.h" />
+    <ClInclude Include="ObjMeteoFallL.h" />
+    <ClInclude Include="ObjMeteoFallLR.h" />
+    <ClInclude Include="ObjMeteoFallLSET.h" />
+    <ClInclude Include="ObjMeteoFallLZ.h" />
+    <ClInclude Include="ObjMeteoFallR.h" />
+    <ClInclude Include="ObjMeteoFallS.h" />
+    <ClInclude Include="ObjMeteoFallSR.h" />
+    <ClInclude Include="ObjMeteoFallSZ.h" />
+    <ClInclude Include="ObjMeteoFallZ.h" />
     <ClInclude Include="ObjOver.h" />
     <ClInclude Include="ObjTime.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

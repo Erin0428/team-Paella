@@ -18,6 +18,16 @@ enum OBJ_NAME
 	OBJ_GOAL_BLOCK,
 	OBJ_METEOFALL,
 	OBJ_METEO,
+	OBJ_METEOFALLS,
+	OBJ_METEOFALLL,
+	OBJ_METEOFALLLR,
+	OBJ_METEOFALLLZ,
+	OBJ_METEOFALLSR,
+	OBJ_METEOFALLSZ,
+	OBJ_METEOFALLLSET,
+	OBJ_METEOFALL1,
+	OBJ_METEOFALLR,
+	OBJ_METEOFALLZ,
 	//OBJ_BULLET,
 };
 //------------------------------------------------
@@ -80,6 +90,16 @@ extern bool g_f;
 #include"ObjMeteoFall.h"
 #include"ObjMeteo.h"
 //#include"CObjBullet.h"
+#include"ObjMeteoFallS.h"
+#include"ObjMeteoFallL.h"
+#include"ObjMeteoFallLR.h"
+#include"ObjMeteoFallLZ.h"
+#include"ObjMeteoFallSR.h"
+#include"ObjMeteoFallSZ.h"
+#include"ObjMeteoFall1.h"
+#include"ObjMeteoFallLSET.h"
+#include"ObjMeteoFallR.h"
+#include"ObjMeteoFallZ.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
